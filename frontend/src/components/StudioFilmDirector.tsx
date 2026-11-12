@@ -418,6 +418,7 @@ export function StudioFilmDirector({
   };
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const currentAudioTrackRef = useRef<string | null>(null);
   const sceneRunnerIdRef = useRef(0);
   const isPlayingRef = useRef(true);
   const isOpenRef = useRef(open);
@@ -482,6 +483,7 @@ export function StudioFilmDirector({
   // Audio setup
   useEffect(() => {
     if (!open) {
+      currentAudioTrackRef.current = null;
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.src = "";
@@ -493,6 +495,25 @@ export function StudioFilmDirector({
       audioRef.current.preload = "auto";
     }
     audioRef.current.muted = muted;
+  }, [open, muted]);
+
+  // Fallback: unlock audio on user gesture if browser autoplay blocked it initially
+  useEffect(() => {
+    if (!open) return;
+    const unlockOnGesture = () => {
+      const audio = audioRef.current;
+      if (audio && audio.paused && isPlayingRef.current && !muted) {
+        audio.play().catch(() => {});
+      }
+    };
+    window.addEventListener("click", unlockOnGesture, { passive: true });
+    window.addEventListener("keydown", unlockOnGesture, { passive: true });
+    window.addEventListener("touchstart", unlockOnGesture, { passive: true });
+    return () => {
+      window.removeEventListener("click", unlockOnGesture);
+      window.removeEventListener("keydown", unlockOnGesture);
+      window.removeEventListener("touchstart", unlockOnGesture);
+    };
   }, [open, muted]);
 
   // Clean element focus helper
@@ -614,8 +635,10 @@ export function StudioFilmDirector({
 
   // Reset and clean exit
   const exitFilm = useCallback(() => {
+    currentAudioTrackRef.current = null;
     if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current.src = "";
     }
     delete document.body.dataset.filmPlaying;
     clearFocus();
@@ -632,7 +655,8 @@ export function StudioFilmDirector({
   // Audio play/pause controls
   const togglePause = useCallback(() => {
     if (!audioRef.current) return;
-    if (playing) {
+    setAudioError("");
+    if (playing && !audioRef.current.paused) {
       audioRef.current.pause();
       setPlaying(false);
     } else {
@@ -645,8 +669,12 @@ export function StudioFilmDirector({
     const next = !muted;
     setMuted(next);
     setSoundMuted(next);
+    setAudioError("");
     if (audioRef.current) {
       audioRef.current.muted = next;
+      if (!next && audioRef.current.paused && isPlayingRef.current) {
+        audioRef.current.play().catch(() => {});
+      }
     }
   }, [muted]);
 
@@ -673,17 +701,26 @@ export function StudioFilmDirector({
     }
     playSceneTransition();
 
+    const targetAudioSrc = `/demo-audio/${currentScene.id}.mp3`;
     const audio = audioRef.current;
-    if (audio && currentScene) {
-      audio.pause();
-      audio.src = `/demo-audio/${currentScene.id}.mp3`;
-      audio.currentTime = 0;
-      audio.playbackRate = 1.0;
-      setAudioReady(false);
-      audio.oncanplay = () => setAudioReady(true);
-      audio.onerror = () => setAudioError("Voiceover track unavailable");
-      if (isPlayingRef.current) {
-        audio.play().catch(() => setAudioError("Audio auto-play blocked"));
+    if (audio) {
+      if (currentAudioTrackRef.current !== targetAudioSrc) {
+        currentAudioTrackRef.current = targetAudioSrc;
+        audio.pause();
+        audio.src = targetAudioSrc;
+        audio.currentTime = 0;
+        audio.playbackRate = 1.0;
+        setAudioReady(false);
+        audio.oncanplay = () => setAudioReady(true);
+        audio.onerror = () => setAudioError("Voiceover track unavailable");
+        if (isPlayingRef.current && !muted) {
+          audio.play().catch((err) => {
+            console.warn("Audio play blocked by browser:", err);
+            setAudioError("Click to enable voice");
+          });
+        }
+      } else if (audio.paused && isPlayingRef.current && !muted) {
+        audio.play().catch(() => {});
       }
     }
 
@@ -1097,7 +1134,6 @@ export function StudioFilmDirector({
   }, [
     open,
     sceneIndex,
-    currentScene,
     clearFocus,
     spotlightTourTarget,
     clickElementWithRipple,

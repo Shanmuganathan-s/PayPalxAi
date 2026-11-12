@@ -266,42 +266,42 @@
   "acts": [
     {
       "scene": 0,
-      "enteredAtMs": 16,
+      "enteredAtMs": 12,
       "clock": "00:00 / 03:25"
     },
     {
       "scene": 1,
-      "enteredAtMs": 32084,
+      "enteredAtMs": 32170,
       "clock": "00:32 / 03:25"
     },
     {
       "scene": 2,
-      "enteredAtMs": 57272,
+      "enteredAtMs": 57289,
       "clock": "00:57 / 03:25"
     },
     {
       "scene": 3,
-      "enteredAtMs": 94795,
+      "enteredAtMs": 106218,
       "clock": "01:26 / 03:25"
     },
     {
       "scene": 4,
-      "enteredAtMs": 131182,
+      "enteredAtMs": 143722,
       "clock": "01:49 / 03:25"
     },
     {
       "scene": 5,
-      "enteredAtMs": 158479,
+      "enteredAtMs": 171153,
       "clock": "02:16 / 03:25"
     },
     {
       "scene": 6,
-      "enteredAtMs": 194221,
+      "enteredAtMs": 211156,
       "clock": "02:50 / 03:25"
     },
     {
       "scene": 7,
-      "enteredAtMs": 217355,
+      "enteredAtMs": 234112,
       "clock": "03:13 / 03:25"
     }
   ],
@@ -309,32 +309,32 @@
     {
       "name": "01-command-center.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\01-command-center.png",
-      "at": "2026-11-12T13:47:20.646Z"
+      "at": "2026-11-12T16:56:21.912Z"
     },
     {
       "name": "03-webhook-room-xray-dock.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\03-webhook-room-xray-dock.png",
-      "at": "2026-11-12T13:47:22.349Z"
+      "at": "2026-11-12T16:56:23.640Z"
     },
     {
       "name": "04-finale-isometric-matrix.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\04-finale-isometric-matrix.png",
-      "at": "2026-11-12T13:47:22.843Z"
+      "at": "2026-11-12T16:56:24.144Z"
     },
     {
       "name": "04-isometric-matrix-finale.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\04-isometric-matrix-finale.png",
-      "at": "2026-11-12T13:47:23.003Z"
+      "at": "2026-11-12T16:56:24.290Z"
     },
     {
       "name": "02-deal-desk-model-result.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\02-deal-desk-model-result.png",
-      "at": "2026-11-12T13:47:42.959Z"
+      "at": "2026-11-12T16:56:43.116Z"
     },
     {
       "name": "02-deal-desk-spotlight.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\02-deal-desk-spotlight.png",
-      "at": "2026-11-12T13:47:43.112Z"
+      "at": "2026-11-12T16:56:43.268Z"
     }
   ]
 }

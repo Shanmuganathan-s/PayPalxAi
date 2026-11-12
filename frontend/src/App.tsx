@@ -10,6 +10,7 @@ import type {
   Summary,
 } from "./types";
 import { formatCurrency, timeLabel } from "./lib/format";
+import { resumeAudioContext } from "./lib/soundEngine";
 import { KpiRibbon } from "./components/KpiRibbon";
 import { StudioPanel } from "./components/StudioPanel";
 import { AgentConsole } from "./components/AgentConsole";
@@ -505,7 +506,10 @@ export default function App() {
                 <button
                   type="button"
                   data-film-open="studio-film"
-                  onClick={() => setFilmOpen(true)}
+                  onClick={() => {
+                    resumeAudioContext();
+                    setFilmOpen(true);
+                  }}
                   className="border border-[#001C64] bg-[#001C64] px-2.5 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.08em] text-[#FCFBF9] hover:bg-[#0070BA]"
                 >
                   Watch 2:45 Studio Film

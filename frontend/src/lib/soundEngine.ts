@@ -58,6 +58,13 @@ function tone(
   oscillator.stop(start + duration + 0.02);
 }
 
+export function resumeAudioContext(): void {
+  const ctx = getContext();
+  if (ctx && ctx.state === "suspended") {
+    void ctx.resume();
+  }
+}
+
 export function setSoundMuted(value: boolean): void {
   muted = value;
 }
