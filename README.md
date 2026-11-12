@@ -2,9 +2,14 @@
 
 **Autonomous agentic CFO, deal desk, and dispute shield for PayPal.**
 
+[![Live Demo](https://img.shields.io/badge/Demo-Interactive%20Studio%20Film-0070BA?style=flat-square)](https://github.com/Shanmuganathan-s/PayPalxAi)
+[![PayPal](https://img.shields.io/badge/PayPal-Sandbox%20Live-001C64?style=flat-square)](https://developer.paypal.com/)
+[![Local AI](https://img.shields.io/badge/Ollama-qwen3.5%3A2b%20Offline--Safe-166534?style=flat-square)](https://ollama.com/)
+[![Security](https://img.shields.io/badge/Security-Zero%20CVE%20%7C%20Bandit%200-166534?style=flat-square)](https://github.com/Shanmuganathan-s/PayPalxAi)
+
 PayPulse turns a receivables book into an autonomous operating loop: it invoices customers, launches subscriptions, collects overdue balances with 50% milestones + PayPal Pay Later, and defends disputes with tracking evidence. An embedded **AG Studio 3.1** canvas provides live portfolio analytics, cross-filtering, and drill-down grids.
 
-Built for the PayPal x AI hackathon with FastAPI, React, PayPal Sandbox APIs, and AG Studio.
+Built for the PayPal x AI hackathon with FastAPI, React, PayPal Sandbox APIs, local Ollama, and AG Studio.
 
 ---
 
@@ -12,43 +17,53 @@ Built for the PayPal x AI hackathon with FastAPI, React, PayPal Sandbox APIs, an
 
 | Agent | Responsibility | Trigger |
 | --- | --- | --- |
-| **Deal & Billing Agent** | Creates invoices, QR checkout orders, subscription plans, financial reports | Chat or playbook |
-| **Collections Nudge-Bot** | Finds the target invoice, creates a 50% split invoice with QR + Pay Later note | Chat, playbook, ledger action, simulator |
-| **Dispute-Shield Agent** | Submits tracking evidence, auto-refunds claims under $25, escalates above threshold | PayPal webhook or simulator |
+| **Deal & Billing Agent** | Converts natural language to live PayPal Invoices v2, Checkout Orders v2, Catalog Subscriptions, and QR codes | Chat or playbook |
+| **Collections Nudge-Bot** | Targets overdue receivables, writes empathetic recovery notes, provisions 50% milestone split invoices + PayPal Pay Later | Chat, playbook, ledger action |
+| **Dispute-Shield Agent** | Validates delivery, uploads multipart carrier evidence to PayPal Disputes API, auto-refunds claims under $25 | PayPal webhook or signed simulator |
 
-The deterministic router is the source of truth, so every flow works with **zero API keys**. When an OpenAI-compatible endpoint is configured, the LLM picks the tool and writes customer-facing copy: collection notes, invoice memos, and dispute evidence briefs. If the model is offline, slow, or returns invalid arguments, PayPulse silently falls back to deterministic routing and shows the fallback state in the UI.
+The deterministic router is the source of truth, so every flow works with **zero API keys**. When an OpenAI-compatible endpoint is configured (such as local Ollama `qwen3.5:2b`), the LLM executes tools and writes customer-facing copy: collection notes, invoice memos, and dispute evidence briefs. If the model is offline, slow, or stopped, PayPulse seamlessly falls back to deterministic routing without failure.
 
-### UI surfaces
+### Key Features & UI Surfaces
 
-The interface uses a warm alabaster, navy, and forest palette with sharp 3px corners, structural hairlines, Plus Jakarta Sans, and IBM Plex Mono. It intentionally avoids gradients, glass effects, oversized radii, soft shadows, icon noise, and fake terminal windows.
-
-- **Command center** - continuous Financial Ledger Ribbon, live AG Studio receivables canvas (6 KPIs, 3 charts, 2 grids, cashflow trend), quick-action rail, and service posture.
-- **Deal desk** - agent console with quick playbooks, runtime credential posture, invoice ledger, QR checkout, and one-click nudges.
-- **Webhook room** - signed-shape simulator for five unhappy/paid paths, structured event inspector with latency and status codes, filters, and autopilot guardrails.
-- **Studio Film** - a built-in 2:45 interactive product film with eight acts, neural voiceover, Web Audio cues, real agent actions, an X-Ray drawer, and a teleprompter. It is launched from the header and resets to the clean seed when it opens so every run is deterministic.
+- **Financial Command Center** - Continuous Financial Ledger Ribbon, live AG Studio 3.1 relational receivables canvas (6 KPIs, 3 charts, 2 grids, cashflow trend), quick-action rail, and live service posture.
+- **Deal Desk** - Natural language agent console with instant playbooks, runtime credential posture, invoice ledger, QR checkout modals, and one-click recovery nudges.
+- **Webhook Room** - Signed PayPal webhook simulator for five unhappy/paid paths, structured event inspector with real-time latency and status codes, filters, and autopilot guardrails.
+- **2:42 Cinema Studio Film** - Built-in interactive product walkthrough with eight acts, neural voiceover, Web Audio cues, live agent actions, bottom broadcast X-Ray dock, dynamic real-time spotlight tracking, and 3D isometric architecture finale.
 
 ---
 
-## Quick start
+## Quick Start & Installation
 
 ### Prerequisites
 
-- Python 3.13 (3.11+ should work)
-- Node.js 20+ and npm
+- **Python:** 3.11+ (Python 3.13 recommended)
+- **Node.js:** 20+ and npm
+- **Local AI (Optional, $0):** [Ollama](https://ollama.com/) running `qwen3.5:2b`
 
-### 1. Backend
+---
 
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/Shanmuganathan-s/PayPalxAi.git
+cd PayPalxAi
+```
+
+---
+
+### Step 2: Backend Setup (FastAPI)
+
+#### Windows (PowerShell):
 ```powershell
 cd backend
-py -3.13 -m venv venv
+python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 copy .env.example .env
 uvicorn main:app --reload --port 8000
 ```
 
-macOS/Linux:
-
+#### macOS / Linux:
 ```bash
 cd backend
 python3 -m venv venv
@@ -58,21 +73,58 @@ cp .env.example .env
 uvicorn main:app --reload --port 8000
 ```
 
-API docs: http://localhost:8000/docs
+* API Docs & Swagger UI will be available at: `http://127.0.0.1:8000/docs`
 
-### 2. Frontend
+---
 
-```powershell
+### Step 3: Frontend Setup (React 19 + Vite)
+
+In a separate terminal:
+
+```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Open http://localhost:5173. Vite proxies `/api` to `http://localhost:8000`.
+* Open `http://localhost:5173` to explore the live dashboard with hot-module reload.
 
-### 3. Single-origin production mode
+---
 
-```powershell
+### Step 4: Single-Origin Production Mode (Recommended)
+
+To run the entire app from a single port without needing two terminals:
+
+```bash
+cd frontend
+npm run build
+```
+
+Then start the FastAPI backend:
+```bash
+cd ../backend
+uvicorn main:app --host 127.0.0.1 --port 8000
+```
+FastAPI serves the built frontend directly at `http://127.0.0.1:8000/` while keeping `/api/*` and `/docs` active.
+
+---
+
+### Step 5: Optional Local AI Brain (Ollama)
+
+To enable local tool-calling and AI text generation without paying cloud API fees:
+
+1. Install and start Ollama:
+   ```bash
+   ollama serve
+   ollama pull qwen3.5:2b
+   ```
+2. In `backend/.env`, set:
+   ```ini
+   LLM_BASE_URL=http://127.0.0.1:11434/v1
+   LLM_API_KEY=ollama
+   LLM_MODEL=qwen3.5:2b
+   ```
+*If Ollama is stopped, PayPulse automatically engages its deterministic router so all features continue to operate.*
 cd frontend
 npm run build
 ```
