@@ -87,35 +87,30 @@ interface XRayWireState {
 
 const FALLBACK_MANIFEST: FilmManifest = {
   voice: "en-US-AndrewNeural",
-  rate: "+3%",
-  total_duration: 205.992,
+  rate: "+8%",
+  total_duration: 162.768,
   scenes: [
     {
       id: "scene-01",
       title: "Act 01 - The Merchant Problem & Live Seed State",
       script:
-        "Small businesses lose thousands of dollars and hours every month chasing unpaid invoices, reconciling subscriptions, and manually defending buyer disputes. Meet PayPulse: an autonomous AI CFO, deal desk, and dispute shield built on live PayPal Sandbox APIs and AG Studio 3.1. Our merchant book starts with 7,920 dollars invoiced, 4,710 dollars collected, 2,750 dollars overdue, and a 59.5 percent collection rate.",
-      duration: 32.4,
+        "Small businesses lose thousands every month chasing unpaid invoices, reconciling subscriptions, and defending buyer disputes. Meet PayPulse: an autonomous AI CFO built on live PayPal Sandbox APIs and AG Studio 3.1. Our merchant book opens with 7,920 dollars invoiced, 4,710 collected, 2,750 overdue, and a 59.5 percent collection rate.",
+      duration: 26.904,
       segments: [
         {
           start: 0,
-          end: 7.5,
-          text: "Small businesses lose thousands of dollars and hours every month chasing unpaid invoices.",
+          end: 8.5,
+          text: "Small businesses lose thousands every month chasing unpaid invoices, reconciling subscriptions, and defending buyer disputes.",
         },
         {
-          start: 7.5,
-          end: 15.5,
-          text: "Meet PayPulse: an autonomous AI CFO, deal desk, and dispute shield built on live PayPal Sandbox APIs and AG Studio 3.1.",
+          start: 8.5,
+          end: 16.5,
+          text: "Meet PayPulse: an autonomous AI CFO built on live PayPal Sandbox APIs and AG Studio 3.1.",
         },
         {
-          start: 15.5,
-          end: 24.0,
-          text: "Our merchant book starts with 7,920 dollars invoiced, 4,710 dollars collected.",
-        },
-        {
-          start: 24.0,
-          end: 32.4,
-          text: "2,750 dollars overdue, and a 59.5 percent collection rate.",
+          start: 16.5,
+          end: 26.9,
+          text: "Our merchant book opens with 7,920 dollars invoiced, 4,710 collected, 2,750 overdue, and a 59.5 percent collection rate.",
         },
       ],
     },
@@ -123,23 +118,23 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-02",
       title: "Act 02 - Command Center & AG Studio 3.1 Relational Analytics",
       script:
-        "Inside the Command Center, PayPulse pipes live receivables, customer loyalty tiers, and recurring subscriptions into an embedded AG Studio 3.1 canvas. Relational joins connect invoices and subscriptions to customers, while calculated expressions compute collection rate and outstanding balance in real time across Executive Cashflow, Overdue and Buy Now Pay Later, and Subscription presets.",
-      duration: 25.488,
+        "Inside the Command Center, PayPulse feeds live receivables, loyalty tiers, and subscriptions into an embedded AG Studio 3.1 canvas. Relational joins link invoices to customers while calculated expressions compute collection rate in real time across Executive Cashflow, Overdue and Buy Now Pay Later, and Subscriptions.",
+      duration: 20.112,
       segments: [
         {
           start: 0,
           end: 8.0,
-          text: "Inside the Command Center, PayPulse pipes live receivables into an embedded AG Studio 3.1 canvas.",
+          text: "Inside the Command Center, PayPulse feeds live receivables and subscriptions into an embedded AG Studio 3.1 canvas.",
         },
         {
           start: 8.0,
-          end: 16.5,
-          text: "Relational joins connect invoices and subscriptions to customers in real time.",
+          end: 14.0,
+          text: "Relational joins link invoices to customers while calculated expressions compute collection rate in real time.",
         },
         {
-          start: 16.5,
-          end: 25.5,
-          text: "Calculated expressions compute collection rate across Executive Cashflow, Overdue and BNPL, and Subscriptions.",
+          start: 14.0,
+          end: 20.1,
+          text: "Across Executive Cashflow, Overdue and Buy Now Pay Later, and Subscriptions.",
         },
       ],
     },
@@ -147,23 +142,23 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-03",
       title: "Act 03 - Deal Desk Happy Path: Live Invoicing, Orders & QR",
       script:
-        "Moving to the Deal Desk, the Deal and Billing Agent converts natural language into live PayPal Sandbox mutations. Watch as our local Ollama model processes the request to bill Alex Mercer 450 dollars for an AI Vision Pipeline milestone. In the background, PayPulse attaches an idempotent PayPal Request ID header, dispatches a live PayPal Sandbox invoice, creates a matching Checkout Order, and renders a scannable PayPal QR code.",
-      duration: 28.512,
+        "On the Deal Desk, the Deal and Billing Agent converts natural language into live PayPal mutations. Local Ollama processes the request to bill Alex Mercer 450 dollars for an AI Vision Pipeline milestone. PayPulse dispatches a live Sandbox invoice, creates a Checkout Order, and renders a scannable PayPal QR code.",
+      duration: 20.112,
       segments: [
         {
           start: 0,
-          end: 8.0,
-          text: "Moving to the Deal Desk, the Deal and Billing Agent converts natural language into live PayPal mutations.",
+          end: 6.5,
+          text: "On the Deal Desk, the Deal and Billing Agent converts natural language into live PayPal mutations.",
         },
         {
-          start: 8.0,
-          end: 16.5,
+          start: 6.5,
+          end: 14.0,
           text: "Local Ollama processes the request to bill Alex Mercer 450 dollars for an AI Vision Pipeline milestone.",
         },
         {
-          start: 16.5,
-          end: 28.5,
-          text: "PayPulse dispatches a live PayPal invoice, creates a Checkout Order, and renders a scannable QR code.",
+          start: 14.0,
+          end: 20.1,
+          text: "PayPulse dispatches a live Sandbox invoice, creates a Checkout Order, and renders a scannable PayPal QR code.",
         },
       ],
     },
@@ -171,23 +166,23 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-04",
       title: "Act 04 - Recurring Subscriptions & Deterministic-First Reliability",
       script:
-        "Next, we instruct our local Ollama model to launch a 79 dollar monthly Enterprise AI Retainer plan. PayPulse provisions a live PayPal Catalog Product and Billing Subscription Plan in seconds. Because PayPulse is deterministic-first and AI-optional, even if local Ollama is offline, our deterministic router guarantees zero-downtime execution.",
-      duration: 22.608,
+        "Next, local Ollama launches a 79 dollar monthly Enterprise AI Retainer plan. PayPulse provisions a live PayPal Catalog Product and Billing Plan in seconds. PayPulse is deterministic-first: even when Ollama is offline, the deterministic router guarantees zero-downtime execution.",
+      duration: 17.976,
       segments: [
         {
           start: 0,
-          end: 8.0,
-          text: "Next, we instruct local Ollama to launch a 79 dollar monthly Enterprise AI Retainer plan.",
+          end: 6.5,
+          text: "Next, local Ollama launches a 79 dollar monthly Enterprise AI Retainer plan.",
         },
         {
-          start: 8.0,
-          end: 15.0,
-          text: "PayPulse provisions a live PayPal Catalog Product and Billing Subscription Plan in seconds.",
+          start: 6.5,
+          end: 12.0,
+          text: "PayPulse provisions a live PayPal Catalog Product and Billing Plan in seconds.",
         },
         {
-          start: 15.0,
-          end: 22.6,
-          text: "Because PayPulse is deterministic-first, if Ollama is offline, the deterministic router guarantees execution.",
+          start: 12.0,
+          end: 18.0,
+          text: "PayPulse is deterministic-first: even when Ollama is offline, the router guarantees zero-downtime execution.",
         },
       ],
     },
@@ -195,22 +190,22 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-05",
       title: "Act 05 - Collections Nudge-Bot & 50% Pay Later Split",
       script:
-        "To recover overdue cash without sending robotic reminder spam, the Collections Nudge-Bot targets our largest overdue invoice: PP-2026-005 for Priya Nair at FinEdge Global, overdue by 1,600 dollars. With one click, the agent drafts a customer-facing recovery note, creates a 50 percent milestone split invoice for 800 dollars, and attaches a PayPal Pay Later checkout order.",
-      duration: 27.624,
+        "The Collections Nudge-Bot targets invoice PP-2026-005 for Priya Nair at FinEdge Global, overdue by 1,600 dollars. With one instruction, the agent drafts a personalized recovery note, creates a 50 percent milestone split invoice for 800 dollars, and attaches a PayPal Pay Later checkout order.",
+      duration: 21.168,
       segments: [
         {
           start: 0,
-          end: 8.5,
-          text: "To recover overdue cash without spam, the Collections Nudge-Bot targets invoice PP-2026-005 ($1,600.00).",
+          end: 7.5,
+          text: "The Collections Nudge-Bot targets invoice PP-2026-005 for Priya Nair at FinEdge Global, overdue by 1,600 dollars.",
         },
         {
-          start: 8.5,
-          end: 17.5,
-          text: "With one click, the agent drafts a recovery note and creates a 50 percent milestone split invoice for $800.00.",
+          start: 7.5,
+          end: 15.0,
+          text: "With one instruction, the agent drafts a personalized recovery note and creates a 50 percent milestone split invoice for 800 dollars.",
         },
         {
-          start: 17.5,
-          end: 27.6,
+          start: 15.0,
+          end: 21.2,
           text: "A PayPal Pay Later checkout order is attached for instant buyer settlement.",
         },
       ],
@@ -219,28 +214,28 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-06",
       title: "Act 06 - Webhook Room: Autonomous Dispute Shield & Unhappy Paths",
       script:
-        "In the Webhook Room, the Dispute-Shield Agent defends the unhappy path autonomously. First, when a 480 dollar Item Not Received dispute arrives, the agent verifies carrier delivery and uploads multipart tracking evidence to PayPal's Disputes API. Second, when an 18 dollar and 50 cent refund claim arrives below our 25 dollar threshold, it auto-refunds the capture to avoid a 15 dollar dispute fee. Third, a 74 dollar denied capture is escalated, and a paid invoice webhook reconciles our ledger live.",
-      duration: 33.96,
+        "In the Webhook Room, the Dispute-Shield Agent defends every unhappy path. A 480 dollar Item Not Received dispute triggers carrier verification and multipart evidence upload to PayPal's Disputes API. An 18 dollar 50 cent claim below the 25 dollar threshold is auto-refunded to avoid a 15 dollar fee. A denied capture is escalated, and a paid webhook reconciles the ledger live.",
+      duration: 24.144,
       segments: [
         {
           start: 0,
-          end: 9.0,
-          text: "In the Webhook Room, the Dispute-Shield Agent defends the unhappy path autonomously.",
+          end: 7.0,
+          text: "In the Webhook Room, the Dispute-Shield Agent defends every unhappy path autonomously.",
         },
         {
-          start: 9.0,
-          end: 18.0,
-          text: "For a $480.00 dispute, the agent verifies carrier delivery and submits multipart evidence to PayPal.",
+          start: 7.0,
+          end: 14.0,
+          text: "A 480 dollar dispute triggers carrier verification and multipart evidence upload to PayPal's Disputes API.",
         },
         {
-          start: 18.0,
-          end: 26.0,
-          text: "A claim under the $25 threshold is auto-refunded to avoid a $15 dispute fee.",
+          start: 14.0,
+          end: 18.5,
+          text: "An 18 dollar 50 cent claim is auto-refunded below the 25 dollar threshold to avoid a 15 dollar fee.",
         },
         {
-          start: 26.0,
-          end: 34.0,
-          text: "A denied capture is escalated, and a paid invoice webhook reconciles the ledger live.",
+          start: 18.5,
+          end: 24.1,
+          text: "A denied capture is escalated, and a paid webhook reconciles the ledger live.",
         },
       ],
     },
@@ -248,23 +243,23 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-07",
       title: "Act 07 - 3D Isometric Architecture & Partner Ecosystem Matrix",
       script:
-        "Under the hood, PayPulse unites eight core capabilities: PayPal Invoicing and QR, Orders v2 and Pay Later, Catalog Subscriptions, Dispute Evidence and Tracking, AG Studio 3.1 relational analytics, APIMatic production SDK patterns with 8.5-hour OAuth caching, local Ollama tool routing, and zero-vulnerability security hardening.",
-      duration: 23.328,
+        "Under the hood, PayPulse unites eight core capabilities: Invoicing and QR, Orders v2 and Pay Later, Catalog Subscriptions, Dispute Evidence and Tracking, AG Studio 3.1 relational analytics, APIMatic SDK patterns with 8.5-hour OAuth caching, local Ollama tool routing, and zero-vulnerability security hardening.",
+      duration: 21.48,
       segments: [
         {
           start: 0,
           end: 7.5,
-          text: "Under the hood, PayPulse unites eight core capabilities across PayPal Sandbox and AG Studio 3.1.",
+          text: "Under the hood, PayPulse unites eight core capabilities across PayPal APIs and AG Studio 3.1.",
         },
         {
           start: 7.5,
           end: 15.0,
-          text: "APIMatic production SDK patterns with 8.5-hour OAuth caching and idempotent request routing.",
+          text: "APIMatic SDK patterns with 8.5-hour OAuth caching, Invoicing, Orders, Subscriptions, and Dispute Evidence.",
         },
         {
           start: 15.0,
-          end: 23.3,
-          text: "Local Ollama tool calling with zero-vulnerability security hardening.",
+          end: 21.5,
+          text: "Local Ollama tool routing and zero-vulnerability security hardening.",
         },
       ],
     },
@@ -272,24 +267,23 @@ const FALLBACK_MANIFEST: FilmManifest = {
       id: "scene-08",
       title: "Act 08 - Verification Metrics & Closing Lockup",
       script:
-        "Verified across 26 desktop and mobile Playwright checks with zero findings in Bandit, pip-audit, and npm audit. The future of autonomous merchant cashflow is here. Welcome to PayPulse.",
-      duration: 12.072,
+        "Verified: 26 Playwright checks, Bandit zero, pip-audit zero, npm audit zero. PayPulse is production-ready. The future of autonomous merchant cashflow is here.",
+      duration: 10.872,
       segments: [
         {
           start: 0,
-          end: 6.0,
-          text: "Verified across 26 desktop and mobile Playwright checks with zero security findings.",
+          end: 5.5,
+          text: "Verified: 26 Playwright checks, Bandit zero, pip-audit zero, npm audit zero.",
         },
         {
-          start: 6.0,
-          end: 12.1,
-          text: "The future of autonomous merchant cashflow is here. Welcome to PayPulse.",
+          start: 5.5,
+          end: 10.9,
+          text: "PayPulse is production-ready. The future of autonomous merchant cashflow is here.",
         },
       ],
     },
   ],
 };
-
 const ISOMETRIC_TILES = [
   {
     tag: "01 // PAYPAL INVOICING v2 & QR",
@@ -423,7 +417,6 @@ export function StudioFilmDirector({
   const isPlayingRef = useRef(true);
   const isOpenRef = useRef(open);
   const sceneIndexRef = useRef(sceneIndex);
-  const focusedElementRef = useRef<HTMLElement | null>(null);
 
   isOpenRef.current = open;
   isPlayingRef.current = playing;
@@ -516,6 +509,51 @@ export function StudioFilmDirector({
     };
   }, [open, muted]);
 
+  // Active focused target element ref
+  const focusedElementRef = useRef<HTMLElement | null>(null);
+  const focusLabelRef = useRef<string>("");
+
+  // Real-time tracking of focused element position on scroll/resize/DOM mutations
+  useEffect(() => {
+    if (!open) return;
+
+    const updateFocusPosition = () => {
+      const target = focusedElementRef.current;
+      if (!target) return;
+      // If target is no longer connected or visible, skip
+      if (!target.isConnected) return;
+
+      const rect = target.getBoundingClientRect();
+      // Ensure element actually has layout
+      if (rect.width === 0 && rect.height === 0) return;
+
+      setFocusRect({
+        left: Math.max(6, rect.left - 2),
+        top: Math.max(54, rect.top - 2),
+        width: Math.min(window.innerWidth - 12, rect.width + 4),
+        height: Math.max(30, rect.height + 4),
+        label: focusLabelRef.current,
+      });
+    };
+
+    window.addEventListener("scroll", updateFocusPosition, { capture: true, passive: true });
+    window.addEventListener("resize", updateFocusPosition, { passive: true });
+
+    // Mutation & animation frame loop for dynamic size changes (e.g., text typing, accordion open)
+    let animationFrameId: number;
+    const loop = () => {
+      updateFocusPosition();
+      animationFrameId = requestAnimationFrame(loop);
+    };
+    animationFrameId = requestAnimationFrame(loop);
+
+    return () => {
+      window.removeEventListener("scroll", updateFocusPosition, { capture: true });
+      window.removeEventListener("resize", updateFocusPosition);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [open]);
+
   // Clean element focus helper
   const clearFocus = useCallback(() => {
     if (focusedElementRef.current) {
@@ -523,6 +561,7 @@ export function StudioFilmDirector({
       focusedElementRef.current.classList.remove("film-focus-target");
       focusedElementRef.current = null;
     }
+    focusLabelRef.current = "";
     setFocusRect(null);
   }, []);
 
@@ -537,6 +576,7 @@ export function StudioFilmDirector({
       target.setAttribute("data-tour-focused", "true");
       target.classList.add("film-focus-target");
       focusedElementRef.current = target;
+      focusLabelRef.current = label;
       target.scrollIntoView({ behavior: "smooth", block: "center" });
 
       await sleep(300);
@@ -733,7 +773,7 @@ export function StudioFilmDirector({
       }
     }, 100);
 
-    // Audio completion promise with robust fallback timeout
+    // Audio completion promise: strictly waits for speech to finish completely!
     const audioPromise = new Promise<void>((resolve) => {
       let resolved = false;
       const done = () => {
@@ -750,7 +790,8 @@ export function StudioFilmDirector({
         audio.addEventListener("ended", done);
         audio.addEventListener("error", done);
       }
-      const durMs = Math.max(8000, Math.floor(((currentScene?.duration || 22) * 1000) - 300));
+      // Safety timeout: generous buffer (+1.5s past track duration) so audio is NEVER cut off early
+      const durMs = Math.max(9000, Math.ceil(((currentScene?.duration || 22) + 1.5) * 1000));
       setTimeout(done, durMs);
     });
 
@@ -777,8 +818,8 @@ export function StudioFilmDirector({
         await propsRef.current.onReset();
         if (!isCurrentRunner || !isOpenRef.current) return;
 
-        // Hold slate for 3.3s then fade out for 0.7s (total 4.0s)
-        await sleep(3300);
+        // Hold slate for 2.5s then fade out for 0.7s (total 3.2s)
+        await sleep(2500);
         if (!isCurrentRunner || !isOpenRef.current) return;
         setOpeningSlateOpacity(0);
         await sleep(700);
@@ -809,16 +850,16 @@ export function StudioFilmDirector({
         await sleep(800);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
-        // Click Overdue & BNPL (hold 4.0s)
+        // Click Overdue & BNPL (hold 3.0s)
         await clickElementWithRipple('[data-film-preset="recovery"]', "OVERDUE & BNPL", true);
         await spotlightTourTarget("studio-presets", "STEP 02 // OVERDUE & BNPL PRESET");
-        await sleep(4000);
+        await sleep(3000);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
-        // Click Subscriptions (hold 4.0s)
+        // Click Subscriptions (hold 3.0s)
         await clickElementWithRipple('[data-film-preset="subscriptions"]', "SUBSCRIPTIONS", true);
         await spotlightTourTarget("studio-presets", "STEP 02 // SUBSCRIPTIONS PRESET");
-        await sleep(4000);
+        await sleep(3000);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
         // Click Executive Cashflow
@@ -875,13 +916,13 @@ export function StudioFilmDirector({
           bookDelta: "Invoiced: $7,920.00 -> $8,370.00 | Open: 3 -> 4",
         });
 
-        // MANDATORY HOLD 1 (5.5 Seconds) on agent-result-card
+        // MANDATORY HOLD 1 (4.0 Seconds) on agent-result-card
         await spotlightTourTarget("agent-result-card", "STEP 03 // LIVE PAYPAL SANDBOX INVOICE");
         playApiSuccess();
-        await sleep(5500);
+        await sleep(4000);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
-        // MANDATORY HOLD 2 (5.0 Seconds) on QR Modal
+        // MANDATORY HOLD 2 (3.5 Seconds) on QR Modal
         const qrBtn = document.querySelector<HTMLElement>('[data-film-action="view-qr"]');
         if (qrBtn) {
           await clickElementWithRipple('[data-film-action="view-qr"]', "PAYMENT QR", false);
@@ -901,7 +942,7 @@ export function StudioFilmDirector({
 
         await spotlightTourTarget("qr-modal-box", "STEP 03 // SCANNABLE CHECKOUT QR");
         playApiSuccess();
-        await sleep(5000);
+        await sleep(3500);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
         propsRef.current.onCloseQr();
@@ -950,10 +991,12 @@ export function StudioFilmDirector({
           bookDelta: "Subscriptions: 1 -> 2 | MRR: +$79.00/mo",
         });
 
-        // MANDATORY HOLD (5.5 Seconds)
+        // MANDATORY HOLD (5.0s) - clear previous spotlight first to avoid double-box
+        clearFocus();
+        await sleep(120);
         await spotlightTourTarget("agent-result-card", "STEP 04 // PAYPAL CATALOG & BILLING PLAN");
         playApiSuccess();
-        await sleep(5500);
+        await sleep(5000);
       }
 
       // ==========================================
@@ -990,10 +1033,10 @@ export function StudioFilmDirector({
         await propsRef.current.onRun("Nudge Priya Nair for overdue invoice PP-2026-005 with a 50% milestone split and PayPal Pay Later");
         if (!isCurrentRunner || !isOpenRef.current) return;
 
-        // MANDATORY HOLD (5.5 Seconds) on result card and new split invoice
+        // MANDATORY HOLD (4.5s) on result card and new split invoice
         await spotlightTourTarget("agent-result-card", "STEP 05 // 50% SPLIT INVOICE CREATED ($800.00)");
         playApiSuccess();
-        await sleep(5500);
+        await sleep(4500);
       }
 
       // ==========================================
@@ -1022,7 +1065,7 @@ export function StudioFilmDirector({
         if (!isCurrentRunner || !isOpenRef.current) return;
         await spotlightTourTarget("webhook-audit-feed", "STEP 06 // EVENT LEDGER UPDATE: $480.00 PROTECTED");
         playApiSuccess();
-        await sleep(4500);
+        await sleep(3500);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
         // Scenario 2: REFUND ($18.50)
@@ -1037,7 +1080,7 @@ export function StudioFilmDirector({
         if (!isCurrentRunner || !isOpenRef.current) return;
         await spotlightTourTarget("webhook-audit-feed", "STEP 06 // EVENT LEDGER UPDATE: AUTO-REFUND");
         playApiSuccess();
-        await sleep(4500);
+        await sleep(3500);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
         // Scenario 3: DENIED ($74.00)
@@ -1051,7 +1094,7 @@ export function StudioFilmDirector({
         await propsRef.current.onSimulate("DENIED");
         if (!isCurrentRunner || !isOpenRef.current) return;
         await spotlightTourTarget("webhook-audit-feed", "STEP 06 // EVENT LEDGER UPDATE: REVIEW QUEUE");
-        await sleep(3500);
+        await sleep(3000);
         if (!isCurrentRunner || !isOpenRef.current) return;
 
         // Scenario 4: PAID ($450.00)
@@ -1066,7 +1109,7 @@ export function StudioFilmDirector({
         if (!isCurrentRunner || !isOpenRef.current) return;
         await spotlightTourTarget("webhook-audit-feed", "STEP 06 // EVENT LEDGER UPDATE: FULL SETTLEMENT");
         playApiSuccess();
-        await sleep(4500);
+        await sleep(3500);
       }
 
       // ==========================================
@@ -1293,73 +1336,166 @@ export function StudioFilmDirector({
         <section
           data-film-finale-stage="true"
           data-film-full-stage="true"
-          className="pointer-events-auto absolute left-0 right-0 top-[52px] bottom-[143px] z-30 flex flex-col items-center justify-center bg-[#F6F5F2] px-6 py-6 border-b border-[#D3D0C5] overflow-y-auto"
+          className="pointer-events-auto absolute left-0 right-0 top-[52px] bottom-[143px] z-30 flex flex-col items-center justify-center bg-[#F6F5F2] px-6 py-6 border-b border-[#D3D0C5] overflow-hidden"
         >
-          <div className={`film-finale-container ${finaleSplit ? "is-split" : ""}`}>
-            <h2 className="flex flex-wrap items-center justify-center gap-2 text-center text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
-              <span className="film-split-left">The future of autonomous merchant cashflow</span>
-              <span className="film-split-emblem bg-[#001C64] text-[#FCFBF9] px-3 py-1 font-mono text-sm font-semibold rounded-[3px] border border-[#0070BA]">
+          {/* Top rule - animates from 0% to 100% width */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#E2E0D8] overflow-hidden">
+            <div
+              className="h-full bg-[#001C64]"
+              style={{
+                width: finaleSplit ? "100%" : "0%",
+                transition: "width 1.8s cubic-bezier(0.16, 1, 0.3, 1)",
+              }}
+            />
+          </div>
+
+          <div className={`film-finale-container ${finaleSplit ? "is-split" : ""} w-full max-w-5xl`}>
+            {/* Eyebrow label */}
+            <p
+              className="text-center font-mono text-[9px] font-semibold uppercase tracking-[0.25em] text-[#0070BA] mb-3"
+              style={{
+                opacity: finaleSplit ? 1 : 0,
+                transform: finaleSplit ? "translateY(0)" : "translateY(8px)",
+                transition: "opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s",
+              }}
+            >
+              PAYPULSE // AUTONOMOUS MERCHANT CASHFLOW ENGINE
+            </p>
+
+            {/* Main headline */}
+            <h2 className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
+              <span
+                className="film-split-left"
+                style={{
+                  display: "inline-block",
+                  opacity: finaleSplit ? 1 : 0,
+                  transform: finaleSplit ? "translateX(0)" : "translateX(-24px)",
+                  transition: "opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s",
+                }}
+              >
+                The future of autonomous merchant cashflow
+              </span>
+              <span
+                className="film-split-emblem bg-[#001C64] text-[#FCFBF9] px-3 py-1 font-mono text-sm font-semibold rounded-[3px] border border-[#0070BA]"
+                style={{
+                  display: "inline-block",
+                  opacity: finaleSplit ? 1 : 0,
+                  transform: finaleSplit ? "translateY(0) scale(1)" : "translateY(12px) scale(0.92)",
+                  transition: "opacity 0.5s ease 0.4s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s",
+                }}
+              >
                 [ PP // PAYPULSE ]
               </span>
-              <span className="film-split-right">is here</span>
+              <span
+                className="film-split-right"
+                style={{
+                  display: "inline-block",
+                  opacity: finaleSplit ? 1 : 0,
+                  transform: finaleSplit ? "translateX(0)" : "translateX(24px)",
+                  transition: "opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s",
+                }}
+              >
+                is here
+              </span>
             </h2>
 
-            {/* Institutional Verification & Architecture Spec Table */}
-            <div className="mt-8 w-full border border-[#D3D0C5] bg-[#FCFBF9] rounded-[3px]">
-              <div className="grid grid-cols-2 divide-x divide-y divide-[#D3D0C5] sm:grid-cols-4 sm:divide-y-0">
-                <div className="p-4">
-                  <span className="font-mono text-[8px] uppercase tracking-[0.1em] text-[#64748B]">
-                    PAYPAL SANDBOX
+            {/* Four verification pillars - Stripe-inspired dark cards */}
+            <div
+              className="mt-8 w-full grid grid-cols-2 gap-3 sm:grid-cols-4"
+              style={{
+                opacity: finaleSplit ? 1 : 0,
+                transform: finaleSplit ? "translateY(0)" : "translateY(16px)",
+                transition: "opacity 0.7s ease 0.65s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.65s",
+              }}
+            >
+              {/* Card 1: PayPal Live APIs */}
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
+                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
+                  PAYPAL LIVE APIS
+                </span>
+                <p className="font-mono text-xs font-semibold text-[#FCFBF9] leading-snug">
+                  Invoicing v2
+                </p>
+                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
+                  Orders v2 // Subscriptions // Disputes
+                </p>
+                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
+                    SANDBOX LIVE
                   </span>
-                  <p className="mt-1 font-mono text-xs font-semibold text-[#001C64]">
-                    LIVE (OAuth2 + WH Verified)
-                  </p>
                 </div>
-                <div className="p-4">
-                  <span className="font-mono text-[8px] uppercase tracking-[0.1em] text-[#64748B]">
-                    AI ORCHESTRATOR
+              </div>
+
+              {/* Card 2: AI Orchestrator */}
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
+                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
+                  AI ORCHESTRATOR
+                </span>
+                <p className="font-mono text-xs font-semibold text-[#FCFBF9] leading-snug">
+                  Ollama qwen3.5:2b
+                </p>
+                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
+                  Tool Calling // Deterministic Fallback
+                </p>
+                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
+                    LOCAL // OFFLINE-SAFE
                   </span>
-                  <p className="mt-1 font-mono text-xs font-semibold text-[#001C64]">
-                    Ollama qwen3.5:2b + Deterministic
-                  </p>
                 </div>
-                <div className="p-4">
-                  <span className="font-mono text-[8px] uppercase tracking-[0.1em] text-[#64748B]">
-                    PARTNER STACK
+              </div>
+
+              {/* Card 3: Partner Stack */}
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
+                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
+                  PARTNER STACK
+                </span>
+                <p className="font-mono text-xs font-semibold text-[#FCFBF9] leading-snug">
+                  AG Studio 3.1
+                </p>
+                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
+                  APIMatic SDK // 8.5h OAuth Cache
+                </p>
+                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
+                    RELATIONAL CANVAS
                   </span>
-                  <p className="mt-1 font-mono text-xs font-semibold text-[#001C64]">
-                    AG Studio 3.1 + APIMatic Patterns
-                  </p>
                 </div>
-                <div className="p-4">
-                  <span className="font-mono text-[8px] uppercase tracking-[0.1em] text-[#64748B]">
-                    SECURITY &amp; QA
+              </div>
+
+              {/* Card 4: Security & QA */}
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
+                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
+                  SECURITY & QA
+                </span>
+                <p className="font-mono text-xs font-semibold text-[#166534] leading-snug">
+                  Bandit 0 // Audits 0
+                </p>
+                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
+                  26 E2E Playwright // Zero CVE
+                </p>
+                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
+                    PRODUCTION READY
                   </span>
-                  <p className="mt-1 font-mono text-xs font-semibold text-[#166534]">
-                    Bandit 0 | Audits 0 | 26/26 E2E
-                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-              <button
-                type="button"
-                data-film-control="replay"
-                onClick={() => setSceneIndex(0)}
-                className="rounded-[3px] bg-[#0070BA] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#FCFBF9] hover:bg-[#001C64] transition-colors"
-              >
-                Replay Film
-              </button>
-              <button
-                type="button"
-                data-film-control="exit-dashboard"
-                onClick={exitAndReset}
-                className="rounded-[3px] bg-[#001C64] px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#FCFBF9] hover:bg-[#0070BA] transition-colors"
-              >
-                Return to Live Workspace
-              </button>
+            {/* Bottom metric strip */}
+            <div
+              className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-mono text-[9px] uppercase tracking-[0.12em] text-[#64748B]"
+              style={{
+                opacity: finaleSplit ? 1 : 0,
+                transition: "opacity 0.6s ease 1.0s",
+              }}
+            >
+              <span>$7,920 Invoiced</span>
+              <span className="text-[#D3D0C5]">|</span>
+              <span>59.5% Collection Rate</span>
+              <span className="text-[#D3D0C5]">|</span>
+              <span>$4,710 Recovered</span>
+              <span className="text-[#D3D0C5]">|</span>
+              <span>$2,750 Overdue Protected</span>
             </div>
           </div>
         </section>

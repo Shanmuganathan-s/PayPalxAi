@@ -1,55 +1,50 @@
 {
   "voice": "en-US-AndrewNeural",
-  "rate": "+3%",
-  "generated_at": "2026-11-12T12:25:34.375030+00:00",
-  "total_duration": 205.992,
+  "rate": "+8%",
+  "generated_at": "2026-11-12T17:33:52.597299+00:00",
+  "total_duration": 162.768,
   "scenes": [
     {
       "id": "scene-01",
       "file": "scene-01.mp3",
       "title": "Act 01 - The Merchant Problem & Live Seed State",
-      "script": "Small businesses lose thousands of dollars and hours every month chasing unpaid invoices, reconciling subscriptions, and manually defending buyer disputes. Meet PayPulse: an autonomous AI CFO, deal desk, and dispute shield built on live PayPal Sandbox APIs and AG Studio 3.1. Our merchant book starts with 7,920 dollars invoiced, 4,710 dollars collected, 2,750 dollars overdue, and a 59.5 percent collection rate.",
-      "duration": 32.4,
+      "script": "Small businesses lose thousands every month chasing unpaid invoices, reconciling subscriptions, and defending buyer disputes. Meet PayPulse: an autonomous AI CFO built on live PayPal Sandbox APIs and AG Studio 3.1. Our merchant book opens with 7,920 dollars invoiced, 4,710 collected, 2,750 overdue, and a 59.5 percent collection rate.",
+      "duration": 26.904,
       "segments": [
         {
-          "start": 0.109,
-          "end": 3.35,
-          "text": "Small businesses lose thousands of dollars and hours every"
+          "start": 0.104,
+          "end": 4.143,
+          "text": "Small businesses lose thousands every month chasing unpaid invoices"
         },
         {
-          "start": 3.362,
-          "end": 7.464,
-          "text": "month chasing unpaid invoices reconciling subscriptions and"
+          "start": 4.387,
+          "end": 8.623,
+          "text": "reconciling subscriptions and defending buyer disputes Meet PayPulse"
         },
         {
-          "start": 7.476,
-          "end": 11.82,
-          "text": "manually defending buyer disputes Meet PayPulse an autonomous"
+          "start": 8.9,
+          "end": 12.454,
+          "text": "an autonomous AI CFO built on live PayPal Sandbox"
         },
         {
-          "start": 11.942,
-          "end": 15.498,
-          "text": "AI CFO deal desk and dispute shield built on"
+          "start": 12.581,
+          "end": 16.69,
+          "text": "APIs and AG Studio 3.1 Our merchant book opens"
         },
         {
-          "start": 15.51,
-          "end": 19.587,
-          "text": "live PayPal Sandbox APIs and AG Studio 3.1"
+          "start": 16.701,
+          "end": 21.088,
+          "text": "with 7,920 dollars invoiced 4,710"
         },
         {
-          "start": 19.988,
-          "end": 24.078,
-          "text": "Our merchant book starts with 7,920 dollars invoiced"
+          "start": 21.1,
+          "end": 25.856,
+          "text": "collected 2,750 overdue and a 59.5 percent"
         },
         {
-          "start": 24.284,
-          "end": 28.799,
-          "text": "4,710 dollars collected 2,750 dollars"
-        },
-        {
-          "start": 28.811,
-          "end": 32.039,
-          "text": "overdue and a 59.5 percent collection rate"
+          "start": 25.868,
+          "end": 26.551,
+          "text": "collection rate"
         }
       ]
     },
@@ -57,43 +52,33 @@
       "id": "scene-02",
       "file": "scene-02.mp3",
       "title": "Act 02 - Command Center & AG Studio 3.1 Relational Analytics",
-      "script": "Inside the Command Center, PayPulse pipes live receivables, customer loyalty tiers, and recurring subscriptions into an embedded AG Studio 3.1 canvas. Relational joins connect invoices and subscriptions to customers, while calculated expressions compute collection rate and outstanding balance in real time across Executive Cashflow, Overdue and Buy Now Pay Later, and Subscription presets.",
-      "duration": 25.488,
+      "script": "Inside the Command Center, PayPulse feeds live receivables, loyalty tiers, and subscriptions into an embedded AG Studio 3.1 canvas. Relational joins link invoices to customers while calculated expressions compute collection rate in real time across Executive Cashflow, Overdue and Buy Now Pay Later, and Subscriptions.",
+      "duration": 20.112,
       "segments": [
         {
-          "start": 0.097,
-          "end": 4.199,
-          "text": "Inside the Command Center PayPulse pipes live receivables customer"
+          "start": 0.093,
+          "end": 4.005,
+          "text": "Inside the Command Center PayPulse feeds live receivables loyalty"
         },
         {
-          "start": 4.211,
-          "end": 8.155,
-          "text": "loyalty tiers and recurring subscriptions into an embedded AG"
+          "start": 4.016,
+          "end": 8.322,
+          "text": "tiers and subscriptions into an embedded AG Studio 3.1"
         },
         {
-          "start": 8.167,
-          "end": 12.015,
-          "text": "Studio 3.1 canvas Relational joins connect"
+          "start": 8.333,
+          "end": 12.361,
+          "text": "canvas Relational joins link invoices to customers while calculated"
         },
         {
-          "start": 12.1,
-          "end": 16.189,
-          "text": "invoices and subscriptions to customers while calculated expressions"
+          "start": 12.373,
+          "end": 16.007,
+          "text": "expressions compute collection rate in real time across Executive"
         },
         {
-          "start": 16.201,
-          "end": 19.794,
-          "text": "compute collection rate and outstanding balance in real time"
-        },
-        {
-          "start": 19.879,
-          "end": 23.629,
-          "text": "across Executive Cashflow Overdue and Buy Now Pay Later"
-        },
-        {
-          "start": 23.908,
-          "end": 25.121,
-          "text": "and Subscription presets"
+          "start": 16.018,
+          "end": 19.757,
+          "text": "Cashflow Overdue and Buy Now Pay Later and Subscriptions"
         }
       ]
     },
@@ -101,48 +86,38 @@
       "id": "scene-03",
       "file": "scene-03.mp3",
       "title": "Act 03 - Deal Desk Happy Path: Live Invoicing, Orders & QR",
-      "script": "Moving to the Deal Desk, the Deal and Billing Agent converts natural language into live PayPal Sandbox mutations. Watch as our local Ollama model processes the request to bill Alex Mercer 450 dollars for an AI Vision Pipeline milestone. In the background, PayPulse attaches an idempotent PayPal Request ID header, dispatches a live PayPal Sandbox invoice, creates a matching Checkout Order, and renders a scannable PayPal QR code.",
-      "duration": 28.512,
+      "script": "On the Deal Desk, the Deal and Billing Agent converts natural language into live PayPal mutations. Local Ollama processes the request to bill Alex Mercer 450 dollars for an AI Vision Pipeline milestone. PayPulse dispatches a live Sandbox invoice, creates a Checkout Order, and renders a scannable PayPal QR code.",
+      "duration": 20.112,
       "segments": [
         {
-          "start": 0.097,
-          "end": 2.743,
-          "text": "Moving to the Deal Desk the Deal and Billing"
+          "start": 0.093,
+          "end": 2.627,
+          "text": "On the Deal Desk the Deal and Billing Agent"
         },
         {
-          "start": 2.755,
-          "end": 7.136,
-          "text": "Agent converts natural language into live PayPal Sandbox mutations"
+          "start": 2.639,
+          "end": 6.493,
+          "text": "converts natural language into live PayPal mutations Local"
         },
         {
-          "start": 7.549,
-          "end": 10.437,
-          "text": "Watch as our local Ollama model processes the request"
+          "start": 6.505,
+          "end": 10.683,
+          "text": "Ollama processes the request to bill Alex Mercer 450 dollars"
         },
         {
-          "start": 10.449,
-          "end": 14.345,
-          "text": "to bill Alex Mercer 450 dollars for an AI Vision"
+          "start": 10.694,
+          "end": 14.491,
+          "text": "for an AI Vision Pipeline milestone PayPulse dispatches a"
         },
         {
-          "start": 14.49,
-          "end": 19.005,
-          "text": "Pipeline milestone In the background PayPulse attaches an idempotent"
+          "start": 14.502,
+          "end": 17.998,
+          "text": "live Sandbox invoice creates a Checkout Order and renders"
         },
         {
-          "start": 19.017,
-          "end": 22.998,
-          "text": "PayPal Request ID header dispatches a live PayPal Sandbox"
-        },
-        {
-          "start": 23.01,
-          "end": 26.347,
-          "text": "invoice creates a matching Checkout Order and renders a"
-        },
-        {
-          "start": 26.359,
-          "end": 28.143,
-          "text": "scannable PayPal QR code"
+          "start": 18.009,
+          "end": 19.757,
+          "text": "a scannable PayPal QR code"
         }
       ]
     },
@@ -150,38 +125,33 @@
       "id": "scene-04",
       "file": "scene-04.mp3",
       "title": "Act 04 - Recurring Subscriptions & Deterministic-First Reliability",
-      "script": "Next, we instruct our local Ollama model to launch a 79 dollar monthly Enterprise AI Retainer plan. PayPulse provisions a live PayPal Catalog Product and Billing Subscription Plan in seconds. Because PayPulse is deterministic-first and AI-optional, even if local Ollama is offline, our deterministic router guarantees zero-downtime execution.",
-      "duration": 22.608,
+      "script": "Next, local Ollama launches a 79 dollar monthly Enterprise AI Retainer plan. PayPulse provisions a live PayPal Catalog Product and Billing Plan in seconds. PayPulse is deterministic-first: even when Ollama is offline, the deterministic router guarantees zero-downtime execution.",
+      "duration": 17.976,
       "segments": [
         {
-          "start": 0.109,
-          "end": 2.973,
-          "text": "Next we instruct our local Ollama model to launch"
+          "start": 0.104,
+          "end": 4.259,
+          "text": "Next local Ollama launches a 79 dollar monthly Enterprise AI"
         },
         {
-          "start": 3.046,
-          "end": 7.367,
-          "text": "a 79 dollar monthly Enterprise AI Retainer plan PayPulse"
+          "start": 4.271,
+          "end": 8.264,
+          "text": "Retainer plan PayPulse provisions a live PayPal Catalog Product"
         },
         {
-          "start": 7.379,
-          "end": 11.299,
-          "text": "provisions a live PayPal Catalog Product and Billing Subscription"
+          "start": 8.472,
+          "end": 12.662,
+          "text": "and Billing Plan in seconds PayPulse is deterministic-first even"
         },
         {
-          "start": 11.311,
-          "end": 15.34,
-          "text": "Plan in seconds Because PayPulse is deterministic-first and"
+          "start": 12.674,
+          "end": 17.06,
+          "text": "when Ollama is offline the deterministic router guarantees zero-downtime"
         },
         {
-          "start": 15.449,
-          "end": 19.842,
-          "text": "AI-optional even if local Ollama is offline our deterministic"
-        },
-        {
-          "start": 19.854,
-          "end": 22.245,
-          "text": "router guarantees zero-downtime execution"
+          "start": 17.072,
+          "end": 17.639,
+          "text": "execution"
         }
       ]
     },
@@ -189,37 +159,32 @@
       "id": "scene-05",
       "file": "scene-05.mp3",
       "title": "Act 05 - Collections Nudge-Bot & 50% Pay Later Split",
-      "script": "To recover overdue cash without sending robotic reminder spam, the Collections Nudge-Bot targets our largest overdue invoice: PP-2026-005 for Priya Nair at FinEdge Global, overdue by 1,600 dollars. With one click, the agent drafts a customer-facing recovery note, creates a 50 percent milestone split invoice for 800 dollars, and attaches a PayPal Pay Later checkout order.",
-      "duration": 27.624,
+      "script": "The Collections Nudge-Bot targets invoice PP-2026-005 for Priya Nair at FinEdge Global, overdue by 1,600 dollars. With one instruction, the agent drafts a personalized recovery note, creates a 50 percent milestone split invoice for 800 dollars, and attaches a PayPal Pay Later checkout order.",
+      "duration": 21.168,
       "segments": [
         {
-          "start": 0.097,
-          "end": 3.847,
-          "text": "To recover overdue cash without sending robotic reminder spam"
+          "start": 0.104,
+          "end": 5.44,
+          "text": "The Collections Nudge-Bot targets invoice PP-2026-005"
         },
         {
-          "start": 4.126,
-          "end": 11.177,
-          "text": "the Collections Nudge-Bot targets our largest overdue invoice PP-2026-005"
-        },
-        {
-          "start": 11.359,
-          "end": 16.323,
+          "start": 5.602,
+          "end": 10.243,
           "text": "for Priya Nair at FinEdge Global overdue by 1,600 dollars"
         },
         {
-          "start": 16.735,
-          "end": 19.976,
-          "text": "With one click the agent drafts a customer-facing recovery"
+          "start": 10.637,
+          "end": 13.773,
+          "text": "With one instruction the agent drafts a personalized recovery"
         },
         {
-          "start": 19.988,
-          "end": 24.454,
+          "start": 13.785,
+          "end": 18.067,
           "text": "note creates a 50 percent milestone split invoice for 800 dollars"
         },
         {
-          "start": 24.745,
-          "end": 27.257,
+          "start": 18.345,
+          "end": 20.81,
           "text": "and attaches a PayPal Pay Later checkout order"
         }
       ]
@@ -228,53 +193,43 @@
       "id": "scene-06",
       "file": "scene-06.mp3",
       "title": "Act 06 - Webhook Room: Autonomous Dispute Shield & Unhappy Paths",
-      "script": "In the Webhook Room, the Dispute-Shield Agent defends the unhappy path autonomously. First, when a 480 dollar Item Not Received dispute arrives, the agent verifies carrier delivery and uploads multipart tracking evidence to PayPal's Disputes API. Second, when an 18 dollar and 50 cent refund claim arrives below our 25 dollar threshold, it auto-refunds the capture to avoid a 15 dollar dispute fee. Third, a 74 dollar denied capture is escalated, and a paid invoice webhook reconciles our ledger live.",
-      "duration": 33.96,
+      "script": "In the Webhook Room, the Dispute-Shield Agent defends every unhappy path. A 480 dollar Item Not Received dispute triggers carrier verification and multipart evidence upload to PayPal's Disputes API. An 18 dollar 50 cent claim below the 25 dollar threshold is auto-refunded to avoid a 15 dollar fee. A denied capture is escalated, and a paid webhook reconciles the ledger live.",
+      "duration": 24.144,
       "segments": [
         {
-          "start": 0.097,
-          "end": 3.216,
-          "text": "In the Webhook Room the Dispute-Shield Agent defends the"
+          "start": 0.093,
+          "end": 3.437,
+          "text": "In the Webhook Room the Dispute-Shield Agent defends every"
         },
         {
-          "start": 3.301,
-          "end": 7.633,
-          "text": "unhappy path autonomously First when a 480 dollar"
+          "start": 3.449,
+          "end": 7.361,
+          "text": "unhappy path A 480 dollar Item Not Received dispute"
         },
         {
-          "start": 7.646,
-          "end": 11.25,
-          "text": "Item Not Received dispute arrives the agent verifies carrier"
+          "start": 7.373,
+          "end": 11.262,
+          "text": "triggers carrier verification and multipart evidence upload to PayPal's"
         },
         {
-          "start": 11.262,
-          "end": 15.121,
-          "text": "delivery and uploads multipart tracking evidence to PayPal's"
+          "start": 11.273,
+          "end": 14.699,
+          "text": "Disputes API An 18 dollar 50 cent claim below the"
         },
         {
-          "start": 15.133,
-          "end": 19.163,
-          "text": "Disputes API Second when an 18 dollar and 50 cent"
+          "start": 14.711,
+          "end": 18.623,
+          "text": "25 dollar threshold is auto-refunded to avoid a 15 dollar"
         },
         {
-          "start": 19.175,
-          "end": 23.556,
-          "text": "refund claim arrives below our 25 dollar threshold it auto-refunds"
+          "start": 18.634,
+          "end": 21.921,
+          "text": "fee A denied capture is escalated and a paid"
         },
         {
-          "start": 23.568,
-          "end": 27.209,
-          "text": "the capture to avoid a 15 dollar dispute fee Third"
-        },
-        {
-          "start": 27.464,
-          "end": 31.189,
-          "text": "a 74 dollar denied capture is escalated and a paid"
-        },
-        {
-          "start": 31.201,
-          "end": 33.616,
-          "text": "invoice webhook reconciles our ledger live"
+          "start": 21.933,
+          "end": 23.796,
+          "text": "webhook reconciles the ledger live"
         }
       ]
     },
@@ -282,38 +237,38 @@
       "id": "scene-07",
       "file": "scene-07.mp3",
       "title": "Act 07 - 3D Isometric Architecture & Partner Ecosystem Matrix",
-      "script": "Under the hood, PayPulse unites eight core capabilities: PayPal Invoicing and QR, Orders v2 and Pay Later, Catalog Subscriptions, Dispute Evidence and Tracking, AG Studio 3.1 relational analytics, APIMatic production SDK patterns with 8.5-hour OAuth caching, local Ollama tool routing, and zero-vulnerability security hardening.",
-      "duration": 23.328,
+      "script": "Under the hood, PayPulse unites eight core capabilities: Invoicing and QR, Orders v2 and Pay Later, Catalog Subscriptions, Dispute Evidence and Tracking, AG Studio 3.1 relational analytics, APIMatic SDK patterns with 8.5-hour OAuth caching, local Ollama tool routing, and zero-vulnerability security hardening.",
+      "duration": 21.48,
       "segments": [
         {
-          "start": 0.097,
-          "end": 4.357,
-          "text": "Under the hood PayPulse unites eight core capabilities PayPal"
+          "start": 0.093,
+          "end": 4.375,
+          "text": "Under the hood PayPulse unites eight core capabilities Invoicing"
         },
         {
-          "start": 4.369,
-          "end": 8.665,
-          "text": "Invoicing and QR Orders v2 and Pay Later Catalog"
+          "start": 4.387,
+          "end": 8.576,
+          "text": "and QR Orders v2 and Pay Later Catalog Subscriptions"
         },
         {
-          "start": 8.677,
-          "end": 12.646,
-          "text": "Subscriptions Dispute Evidence and Tracking AG Studio"
+          "start": 8.843,
+          "end": 12.928,
+          "text": "Dispute Evidence and Tracking AG Studio 3.1 relational"
         },
         {
-          "start": 12.658,
-          "end": 16.917,
-          "text": "3.1 relational analytics APIMatic production SDK patterns"
+          "start": 12.94,
+          "end": 16.91,
+          "text": "analytics APIMatic SDK patterns with 8.5-hour OAuth"
         },
         {
-          "start": 16.93,
-          "end": 20.74,
-          "text": "with 8.5-hour OAuth caching local Ollama tool routing"
+          "start": 16.921,
+          "end": 20.729,
+          "text": "caching local Ollama tool routing and zero-vulnerability security"
         },
         {
-          "start": 21.032,
-          "end": 22.973,
-          "text": "and zero-vulnerability security hardening"
+          "start": 20.741,
+          "end": 21.123,
+          "text": "hardening"
         }
       ]
     },
@@ -321,28 +276,23 @@
       "id": "scene-08",
       "file": "scene-08.mp3",
       "title": "Act 08 - Verification Metrics & Closing Lockup",
-      "script": "Verified across 26 desktop and mobile Playwright checks with zero findings in Bandit, pip-audit, and npm audit. The future of autonomous merchant cashflow is here. Welcome to PayPulse.",
-      "duration": 12.072,
+      "script": "Verified: 26 Playwright checks, Bandit zero, pip-audit zero, npm audit zero. PayPulse is production-ready. The future of autonomous merchant cashflow is here.",
+      "duration": 10.872,
       "segments": [
         {
-          "start": 0.097,
-          "end": 3.835,
-          "text": "Verified across 26 desktop and mobile Playwright checks with"
+          "start": 0.093,
+          "end": 3.947,
+          "text": "Verified 26 Playwright checks Bandit zero pip-audit"
         },
         {
-          "start": 3.847,
-          "end": 7.718,
-          "text": "zero findings in Bandit pip-audit and npm audit The"
+          "start": 3.958,
+          "end": 7.998,
+          "text": "zero npm audit zero PayPulse is production-ready The"
         },
         {
-          "start": 7.731,
-          "end": 11.117,
-          "text": "future of autonomous merchant cashflow is here Welcome to"
-        },
-        {
-          "start": 11.129,
-          "end": 11.723,
-          "text": "PayPulse"
+          "start": 8.009,
+          "end": 10.521,
+          "text": "future of autonomous merchant cashflow is here"
         }
       ]
     }

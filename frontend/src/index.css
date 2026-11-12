@@ -150,12 +150,12 @@ button {
 /* PayPulse Studio Film Anti-Vibecode Styles */
 [data-film-active="true"] [data-tour-id],
 [data-film-active="true"] [data-film-panel] {
-  transition: opacity 300ms ease;
+  transition: opacity 150ms ease;
 }
 
 [data-film-active="true"]:has([data-tour-focused="true"]) [data-film-panel]:not([data-tour-focused="true"]):not(:has([data-tour-focused="true"])),
 [data-film-active="true"]:has([data-tour-focused="true"]) [data-tour-id]:not([data-tour-focused="true"]):not(:has([data-tour-focused="true"])) {
-  opacity: 0.72;
+  opacity: 0.62;
 }
 
 [data-tour-focused="true"],

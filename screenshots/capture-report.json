@@ -62,13 +62,13 @@
     },
     {
       "name": "Non-focused panels fade to 0.62",
-      "ok": true,
-      "detail": "[{\"panel\":\"KpiRibbon\",\"opacity\":\"1\",\"focused\":\"true\"},{\"panel\":\"StudioPanel\",\"opacity\":\"0.72\",\"focused\":null},{\"panel\":\"CommandRail\",\"opacity\":\"0.72\",\"focused\":null}]"
+      "ok": false,
+      "detail": "[{\"panel\":\"KpiRibbon\",\"opacity\":\"1\",\"focused\":\"true\"},{\"panel\":\"StudioPanel\",\"opacity\":\"0.968452\",\"focused\":null},{\"panel\":\"CommandRail\",\"opacity\":\"0.968452\",\"focused\":null}]"
     },
     {
       "name": "Active panel remains fully opaque",
       "ok": true,
-      "detail": "[{\"panel\":\"KpiRibbon\",\"opacity\":\"1\",\"focused\":\"true\"},{\"panel\":\"StudioPanel\",\"opacity\":\"0.72\",\"focused\":null},{\"panel\":\"CommandRail\",\"opacity\":\"0.72\",\"focused\":null}]"
+      "detail": "[{\"panel\":\"KpiRibbon\",\"opacity\":\"1\",\"focused\":\"true\"},{\"panel\":\"StudioPanel\",\"opacity\":\"0.968452\",\"focused\":null},{\"panel\":\"CommandRail\",\"opacity\":\"0.968452\",\"focused\":null}]"
     },
     {
       "name": "Eight clickable chapters exist",
@@ -79,21 +79,6 @@
       "name": "Matrix tiles light to deep navy",
       "ok": true,
       "detail": "rgb(0, 28, 100)"
-    },
-    {
-      "name": "Act 08 lockup includes PP // PAYPULSE",
-      "ok": true,
-      "detail": ""
-    },
-    {
-      "name": "Act 08 has Replay Film",
-      "ok": true,
-      "detail": ""
-    },
-    {
-      "name": "Act 08 has Return to Live Workspace",
-      "ok": true,
-      "detail": ""
     },
     {
       "name": "Reached all 8 acts",
@@ -173,7 +158,7 @@
     {
       "name": "03 X-Ray has wire/auth/book/200",
       "ok": true,
-      "detail": " Agent defends the\n\nLIVE EXECUTION X-RAY INSPECTOR\nSANDBOX VERIFIED\nHTTP WIRE\nPOST /api/demo/reset\n200 OK\nAI & AUTH\nDeterministic Seed Init + OAuth2 Token Verified\nBOOK DELTA\nInvoiced: $7,920.00 | Paid: $4,710.00 | 59.5%"
+      "detail": "gent defends every\n\nLIVE EXECUTION X-RAY INSPECTOR\nSANDBOX VERIFIED\nHTTP WIRE\nPOST /api/demo/reset\n200 OK\nAI & AUTH\nDeterministic Seed Init + OAuth2 Token Verified\nBOOK DELTA\nInvoiced: $7,920.00 | Paid: $4,710.00 | 59.5%"
     },
     {
       "name": "04 state is the isometric matrix with 8 lit tiles",
@@ -257,84 +242,80 @@
     {
       "method": "POST",
       "body": "{\"scenario\":\"PAID\"}"
-    },
-    {
-      "method": "POST",
-      "body": "{\"scenario\":\"DISPUTE\"}"
     }
   ],
   "acts": [
     {
       "scene": 0,
-      "enteredAtMs": 12,
-      "clock": "00:00 / 03:25"
+      "enteredAtMs": 103,
+      "clock": "00:00 / 02:42"
     },
     {
       "scene": 1,
-      "enteredAtMs": 32170,
-      "clock": "00:32 / 03:25"
+      "enteredAtMs": 27689,
+      "clock": "00:27 / 02:42"
     },
     {
       "scene": 2,
-      "enteredAtMs": 57289,
-      "clock": "00:57 / 03:25"
+      "enteredAtMs": 47896,
+      "clock": "00:47 / 02:42"
     },
     {
       "scene": 3,
-      "enteredAtMs": 106218,
-      "clock": "01:26 / 03:25"
+      "enteredAtMs": 94365,
+      "clock": "01:07 / 02:42"
     },
     {
       "scene": 4,
-      "enteredAtMs": 143722,
-      "clock": "01:49 / 03:25"
+      "enteredAtMs": 131050,
+      "clock": "01:25 / 02:42"
     },
     {
       "scene": 5,
-      "enteredAtMs": 171153,
-      "clock": "02:16 / 03:25"
+      "enteredAtMs": 152678,
+      "clock": "01:46 / 02:42"
     },
     {
       "scene": 6,
-      "enteredAtMs": 211156,
-      "clock": "02:50 / 03:25"
+      "enteredAtMs": 190626,
+      "clock": "02:10 / 02:42"
     },
     {
       "scene": 7,
-      "enteredAtMs": 234112,
-      "clock": "03:13 / 03:25"
+      "enteredAtMs": 212173,
+      "clock": "02:31 / 02:42"
     }
   ],
   "screenshots": [
     {
       "name": "01-command-center.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\01-command-center.png",
-      "at": "2026-11-12T16:56:21.912Z"
+      "at": "2026-11-12T17:40:28.120Z"
     },
     {
       "name": "03-webhook-room-xray-dock.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\03-webhook-room-xray-dock.png",
-      "at": "2026-11-12T16:56:23.640Z"
+      "at": "2026-11-12T17:40:29.676Z"
     },
     {
       "name": "04-finale-isometric-matrix.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\04-finale-isometric-matrix.png",
-      "at": "2026-11-12T16:56:24.144Z"
+      "at": "2026-11-12T17:40:30.214Z"
     },
     {
       "name": "04-isometric-matrix-finale.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\04-isometric-matrix-finale.png",
-      "at": "2026-11-12T16:56:24.290Z"
+      "at": "2026-11-12T17:40:30.399Z"
     },
     {
       "name": "02-deal-desk-model-result.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\02-deal-desk-model-result.png",
-      "at": "2026-11-12T16:56:43.116Z"
+      "at": "2026-11-12T17:40:41.273Z"
     },
     {
       "name": "02-deal-desk-spotlight.png",
       "file": "F:\\projects\\PaypalxAI\\screenshots\\02-deal-desk-spotlight.png",
-      "at": "2026-11-12T16:56:43.268Z"
+      "at": "2026-11-12T17:40:41.462Z"
     }
   ]
 }
