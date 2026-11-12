@@ -1123,15 +1123,67 @@ export function StudioFilmDirector({
 
         setXrayState({
           wire: "PAYPAL SANDBOX MATRIX // 8 CORE CAPABILITIES",
+          status: "SYNCHRONIZING...",
+          aiAuth: "APIMatic SDK Context + 8.5h OAuth2 Cache",
+          bookDelta: "Platform Stack Verification in progress",
+        });
+
+        // Sequence tile highlights in sync with the voiceover narration:
+        // Voice: "Under the hood, PayPulse unites eight core capabilities:
+        //  0.1s - 4.4s: Invoicing and QR (Tile 0)
+        //  4.4s - 6.5s: Orders v2 and Pay Later (Tile 1)
+        //  6.5s - 8.6s: Catalog Subscriptions (Tile 2)
+        //  8.8s - 10.9s: Dispute Evidence and Tracking (Tile 3)
+        // 10.9s - 14.9s: AG Studio 3.1 relational analytics (Tile 4)
+        // 14.9s - 17.0s: APIMatic SDK patterns with 8.5-hour OAuth caching (Tile 5)
+        // 17.0s - 19.0s: local Ollama tool routing (Tile 6)
+        // 19.0s - 21.5s: zero-vulnerability security hardening (Tile 7) -> all lit!"
+
+        // Start with tile 0
+        setElevatedTiles([0]);
+        playKeyTick();
+
+        await sleep(4300);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        setElevatedTiles([1]);
+        playKeyTick();
+
+        await sleep(2100);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        setElevatedTiles([2]);
+        playKeyTick();
+
+        await sleep(2200);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        setElevatedTiles([3]);
+        playKeyTick();
+
+        await sleep(2100);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        setElevatedTiles([4]);
+        playKeyTick();
+
+        await sleep(4000);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        setElevatedTiles([5]);
+        playKeyTick();
+
+        await sleep(2100);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        setElevatedTiles([6]);
+        playKeyTick();
+
+        await sleep(2000);
+        if (!isCurrentRunner || !isOpenRef.current) return;
+        // Finale of Act 07: all 8 tiles ignite and glow in unison!
+        setElevatedTiles([0, 1, 2, 3, 4, 5, 6, 7]);
+        playApiSuccess();
+        setXrayState({
+          wire: "PAYPAL SANDBOX MATRIX // 8 CORE CAPABILITIES",
           status: "VERIFIED",
           aiAuth: "APIMatic SDK Context + 8.5h OAuth2 Cache",
           bookDelta: "Platform Stack Verified: 8/8 Active",
         });
-
-        // Elevate all 8 capability tiles with success chime
-        setElevatedTiles([0, 1, 2, 3, 4, 5, 6, 7]);
-        playApiSuccess();
-        await sleep(2000);
       }
 
       // ==========================================
@@ -1304,13 +1356,15 @@ export function StudioFilmDirector({
           <div className="film-matrix-wrap film-matrix-3d-grid">
             {ISOMETRIC_TILES.map((tile, idx) => {
               const isLit = elevatedTiles.includes(idx);
+              const isSoloElevated = elevatedTiles.length < 8 && elevatedTiles.length > 0;
+              const isDimmed = isSoloElevated && !isLit;
               return (
                 <div
                   key={tile.tag}
                   data-film-tile={idx}
                   data-film-matrix-tile={idx}
                   data-film-matrix-active={isLit ? "true" : "false"}
-                  className={`film-matrix-3d-tile film-matrix-tile ${isLit ? "is-elevated is-lit" : ""}`}
+                  className={`film-matrix-3d-tile film-matrix-tile ${isLit ? "is-elevated is-lit" : ""} ${isDimmed ? "is-dimmed" : ""}`}
                 >
                   <span className="film-matrix-tag film-matrix-index">{tile.tag}</span>
                   <h3 className="film-matrix-title">{tile.title}</h3>
@@ -1330,39 +1384,42 @@ export function StudioFilmDirector({
       )}
 
       {/* ============================================================== */}
-      {/* ACT 08: Kinetic Split-Text Finale & Spec Sheet                 */}
+      {/* ACT 08: Institutional Closing Stage & Verified Spec Hub         */}
       {/* ============================================================== */}
       {sceneIndex === 7 && (
         <section
           data-film-finale-stage="true"
           data-film-full-stage="true"
-          className="pointer-events-auto absolute left-0 right-0 top-[52px] bottom-[143px] z-30 flex flex-col items-center justify-center bg-[#F6F5F2] px-6 py-6 border-b border-[#D3D0C5] overflow-hidden"
+          className="pointer-events-auto absolute left-0 right-0 top-[52px] bottom-[143px] z-30 flex flex-col items-center justify-center bg-[#F6F5F2] px-6 py-4 border-b border-[#D3D0C5] overflow-hidden"
         >
-          {/* Top rule - animates from 0% to 100% width */}
+          {/* Top hairline progress indicator */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#E2E0D8] overflow-hidden">
             <div
               className="h-full bg-[#001C64]"
               style={{
                 width: finaleSplit ? "100%" : "0%",
-                transition: "width 1.8s cubic-bezier(0.16, 1, 0.3, 1)",
+                transition: "width 1.6s cubic-bezier(0.16, 1, 0.3, 1)",
               }}
             />
           </div>
 
           <div className={`film-finale-container ${finaleSplit ? "is-split" : ""} w-full max-w-5xl`}>
-            {/* Eyebrow label */}
-            <p
-              className="text-center font-mono text-[9px] font-semibold uppercase tracking-[0.25em] text-[#0070BA] mb-3"
+            {/* Top Verification Badge */}
+            <div
+              className="flex items-center justify-center gap-2 mb-3"
               style={{
                 opacity: finaleSplit ? 1 : 0,
-                transform: finaleSplit ? "translateY(0)" : "translateY(8px)",
-                transition: "opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s",
+                transform: finaleSplit ? "translateY(0)" : "translateY(-6px)",
+                transition: "opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s",
               }}
             >
-              PAYPULSE // AUTONOMOUS MERCHANT CASHFLOW ENGINE
-            </p>
+              <span className="inline-flex items-center gap-1.5 border border-[#166534] bg-[#FCFBF9] px-2.5 py-1 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-[#166534] rounded-[3px]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#166534]" />
+                LIVE PRODUCTION SPECIFICATION // AUDIT VERIFIED
+              </span>
+            </div>
 
-            {/* Main headline */}
+            {/* Kinetic Hero Split Lockup */}
             <h2 className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-3xl font-bold tracking-tight text-[#0F172A] sm:text-4xl">
               <span
                 className="film-split-left"
@@ -1370,18 +1427,18 @@ export function StudioFilmDirector({
                   display: "inline-block",
                   opacity: finaleSplit ? 1 : 0,
                   transform: finaleSplit ? "translateX(0)" : "translateX(-24px)",
-                  transition: "opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s",
+                  transition: "opacity 0.6s ease 0.1s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s",
                 }}
               >
                 The future of autonomous merchant cashflow
               </span>
               <span
-                className="film-split-emblem bg-[#001C64] text-[#FCFBF9] px-3 py-1 font-mono text-sm font-semibold rounded-[3px] border border-[#0070BA]"
+                className="film-split-emblem bg-[#001C64] text-[#FCFBF9] px-3.5 py-1.5 font-mono text-sm font-semibold rounded-[3px] border border-[#0070BA]"
                 style={{
                   display: "inline-block",
                   opacity: finaleSplit ? 1 : 0,
-                  transform: finaleSplit ? "translateY(0) scale(1)" : "translateY(12px) scale(0.92)",
-                  transition: "opacity 0.5s ease 0.4s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s",
+                  transform: finaleSplit ? "translateY(0) scale(1)" : "translateY(10px) scale(0.92)",
+                  transition: "opacity 0.5s ease 0.35s, transform 0.5s cubic-bezier(0.16,1,0.3,1) 0.35s",
                 }}
               >
                 [ PP // PAYPULSE ]
@@ -1392,110 +1449,142 @@ export function StudioFilmDirector({
                   display: "inline-block",
                   opacity: finaleSplit ? 1 : 0,
                   transform: finaleSplit ? "translateX(0)" : "translateX(24px)",
-                  transition: "opacity 0.7s ease 0.1s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s",
+                  transition: "opacity 0.6s ease 0.1s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s",
                 }}
               >
                 is here
               </span>
             </h2>
 
-            {/* Four verification pillars - Stripe-inspired dark cards */}
+            {/* Architectural 4-Column Verification Grid */}
             <div
-              className="mt-8 w-full grid grid-cols-2 gap-3 sm:grid-cols-4"
+              className="mt-6 w-full grid grid-cols-2 gap-3 sm:grid-cols-4"
               style={{
                 opacity: finaleSplit ? 1 : 0,
-                transform: finaleSplit ? "translateY(0)" : "translateY(16px)",
-                transition: "opacity 0.7s ease 0.65s, transform 0.7s cubic-bezier(0.16,1,0.3,1) 0.65s",
+                transform: finaleSplit ? "translateY(0)" : "translateY(14px)",
+                transition: "opacity 0.6s ease 0.5s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.5s",
               }}
             >
               {/* Card 1: PayPal Live APIs */}
-              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
-                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
-                  PAYPAL LIVE APIS
-                </span>
-                <p className="font-mono text-xs font-semibold text-[#FCFBF9] leading-snug">
-                  Invoicing v2
-                </p>
-                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
-                  Orders v2 // Subscriptions // Disputes
-                </p>
-                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
-                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col justify-between min-h-[148px]">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.14em] text-[#bae6fd]">
+                      01 // PAYPAL API
+                    </span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#166534]" />
+                  </div>
+                  <p className="mt-2 font-mono text-xs font-semibold text-[#FCFBF9]">
+                    Invoicing &amp; Orders v2
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] text-[#94A3B8] leading-tight">
+                    Subscriptions // Disputes // QR
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#FCFBF9] px-1.5 py-0.5 rounded-[2px]">
                     SANDBOX LIVE
                   </span>
                 </div>
               </div>
 
               {/* Card 2: AI Orchestrator */}
-              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
-                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
-                  AI ORCHESTRATOR
-                </span>
-                <p className="font-mono text-xs font-semibold text-[#FCFBF9] leading-snug">
-                  Ollama qwen3.5:2b
-                </p>
-                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
-                  Tool Calling // Deterministic Fallback
-                </p>
-                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
-                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
-                    LOCAL // OFFLINE-SAFE
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col justify-between min-h-[148px]">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.14em] text-[#bae6fd]">
+                      02 // AI ENGINE
+                    </span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#166534]" />
+                  </div>
+                  <p className="mt-2 font-mono text-xs font-semibold text-[#FCFBF9]">
+                    Ollama qwen3.5:2b
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] text-[#94A3B8] leading-tight">
+                    Tool Calling + Deterministic
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#FCFBF9] px-1.5 py-0.5 rounded-[2px]">
+                    LOCAL &amp; RESILIENT
                   </span>
                 </div>
               </div>
 
               {/* Card 3: Partner Stack */}
-              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
-                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
-                  PARTNER STACK
-                </span>
-                <p className="font-mono text-xs font-semibold text-[#FCFBF9] leading-snug">
-                  AG Studio 3.1
-                </p>
-                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
-                  APIMatic SDK // 8.5h OAuth Cache
-                </p>
-                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
-                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
-                    RELATIONAL CANVAS
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col justify-between min-h-[148px]">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.14em] text-[#bae6fd]">
+                      03 // PARTNER STACK
+                    </span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#166534]" />
+                  </div>
+                  <p className="mt-2 font-mono text-xs font-semibold text-[#FCFBF9]">
+                    AG Studio 3.1
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] text-[#94A3B8] leading-tight">
+                    APIMatic SDK // 8.5h OAuth
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#FCFBF9] px-1.5 py-0.5 rounded-[2px]">
+                    RELATIONAL JOINS
                   </span>
                 </div>
               </div>
 
-              {/* Card 4: Security & QA */}
-              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col gap-2">
-                <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.15em] text-[#0070BA]">
-                  SECURITY & QA
-                </span>
-                <p className="font-mono text-xs font-semibold text-[#166534] leading-snug">
-                  Bandit 0 // Audits 0
-                </p>
-                <p className="font-mono text-[10px] text-[#94A3B8] leading-snug">
-                  26 E2E Playwright // Zero CVE
-                </p>
-                <div className="mt-auto pt-2 border-t border-[#0070BA]/30">
-                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#F0F7F1] px-1.5 py-0.5 rounded-[2px]">
+              {/* Card 4: Security & QA - Text matched in pure #FCFBF9 high contrast */}
+              <div className="border border-[#001C64] bg-[#001C64] rounded-[3px] p-4 flex flex-col justify-between min-h-[148px]">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.14em] text-[#bae6fd]">
+                      04 // SECURITY &amp; QA
+                    </span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#166534]" />
+                  </div>
+                  <p className="mt-2 font-mono text-xs font-semibold text-[#FCFBF9]">
+                    Bandit 0 // Audits 0
+                  </p>
+                  <p className="mt-1 font-mono text-[10px] text-[#94A3B8] leading-tight">
+                    26 E2E Playwright // Zero CVE
+                  </p>
+                </div>
+                <div className="pt-2 border-t border-[#0070BA]/30">
+                  <span className="font-mono text-[8px] font-semibold text-[#166534] bg-[#FCFBF9] px-1.5 py-0.5 rounded-[2px]">
                     PRODUCTION READY
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Bottom metric strip */}
+            {/* Institutional Live Ledger Ledger Strip */}
             <div
-              className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-mono text-[9px] uppercase tracking-[0.12em] text-[#64748B]"
+              className="mt-5 w-full border border-[#D3D0C5] bg-[#FCFBF9] rounded-[3px] px-4 py-2.5"
               style={{
                 opacity: finaleSplit ? 1 : 0,
-                transition: "opacity 0.6s ease 1.0s",
+                transform: finaleSplit ? "translateY(0)" : "translateY(10px)",
+                transition: "opacity 0.6s ease 0.75s, transform 0.6s ease 0.75s",
               }}
             >
-              <span>$7,920 Invoiced</span>
-              <span className="text-[#D3D0C5]">|</span>
-              <span>59.5% Collection Rate</span>
-              <span className="text-[#D3D0C5]">|</span>
-              <span>$4,710 Recovered</span>
-              <span className="text-[#D3D0C5]">|</span>
-              <span>$2,750 Overdue Protected</span>
+              <div className="grid grid-cols-2 divide-x divide-[#D3D0C5] sm:grid-cols-4 sm:divide-y-0 text-center font-mono text-[10px] tabular-nums">
+                <div className="px-2">
+                  <span className="text-[8px] uppercase tracking-[0.1em] text-[#64748B] block">INVOICED BOOK</span>
+                  <span className="font-semibold text-[#001C64]">$7,920.00</span>
+                </div>
+                <div className="px-2">
+                  <span className="text-[8px] uppercase tracking-[0.1em] text-[#64748B] block">COLLECTION RATE</span>
+                  <span className="font-semibold text-[#0070BA]">59.5%</span>
+                </div>
+                <div className="px-2">
+                  <span className="text-[8px] uppercase tracking-[0.1em] text-[#64748B] block">CASH COLLECTED</span>
+                  <span className="font-semibold text-[#166534]">$4,710.00</span>
+                </div>
+                <div className="px-2">
+                  <span className="text-[8px] uppercase tracking-[0.1em] text-[#64748B] block">OVERDUE PROTECTED</span>
+                  <span className="font-semibold text-[#92400E]">$2,750.00</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
