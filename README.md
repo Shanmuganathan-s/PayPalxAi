@@ -1,0 +1,275 @@
+﻿# PayPulse
+
+**Autonomous agentic CFO, deal desk, and dispute shield for PayPal.**
+
+PayPulse turns a receivables book into an autonomous operating loop: it invoices customers, launches subscriptions, collects overdue balances with 50% milestones + PayPal Pay Later, and defends disputes with tracking evidence. An embedded **AG Studio 3.1** canvas provides live portfolio analytics, cross-filtering, and drill-down grids.
+
+Built for the PayPal x AI hackathon with FastAPI, React, PayPal Sandbox APIs, and AG Studio.
+
+---
+
+## What it does
+
+| Agent | Responsibility | Trigger |
+| --- | --- | --- |
+| **Deal & Billing Agent** | Creates invoices, QR checkout orders, subscription plans, financial reports | Chat or playbook |
+| **Collections Nudge-Bot** | Finds the target invoice, creates a 50% split invoice with QR + Pay Later note | Chat, playbook, ledger action, simulator |
+| **Dispute-Shield Agent** | Submits tracking evidence, auto-refunds claims under $25, escalates above threshold | PayPal webhook or simulator |
+
+The deterministic router is the source of truth, so every flow works with **zero API keys**. When an OpenAI-compatible endpoint is configured, the LLM picks the tool and writes customer-facing copy: collection notes, invoice memos, and dispute evidence briefs. If the model is offline, slow, or returns invalid arguments, PayPulse silently falls back to deterministic routing and shows the fallback state in the UI.
+
+### UI surfaces
+
+The interface uses a warm alabaster, navy, and forest palette with sharp 3px corners, structural hairlines, Plus Jakarta Sans, and IBM Plex Mono. It intentionally avoids gradients, glass effects, oversized radii, soft shadows, icon noise, and fake terminal windows.
+
+- **Command center** - continuous Financial Ledger Ribbon, live AG Studio receivables canvas (6 KPIs, 3 charts, 2 grids, cashflow trend), quick-action rail, and service posture.
+- **Deal desk** - agent console with quick playbooks, runtime credential posture, invoice ledger, QR checkout, and one-click nudges.
+- **Webhook room** - signed-shape simulator for five unhappy/paid paths, structured event inspector with latency and status codes, filters, and autopilot guardrails.
+- **Studio Film** - a built-in 2:45 interactive product film with eight acts, neural voiceover, Web Audio cues, real agent actions, an X-Ray drawer, and a teleprompter. It is launched from the header and resets to the clean seed when it opens so every run is deterministic.
+
+---
+
+## Quick start
+
+### Prerequisites
+
+- Python 3.13 (3.11+ should work)
+- Node.js 20+ and npm
+
+### 1. Backend
+
+```powershell
+cd backend
+py -3.13 -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+copy .env.example .env
+uvicorn main:app --reload --port 8000
+```
+
+macOS/Linux:
+
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+uvicorn main:app --reload --port 8000
+```
+
+API docs: http://localhost:8000/docs
+
+### 2. Frontend
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Open http://localhost:5173. Vite proxies `/api` to `http://localhost:8000`.
+
+### 3. Single-origin production mode
+
+```powershell
+cd frontend
+npm run build
+```
+
+Then restart the backend. FastAPI serves `frontend/dist` at http://localhost:8000/ while keeping `/api` and `/docs` available.
+
+---
+
+## PayPal configuration
+
+Set these in `backend/.env`:
+
+```dotenv
+PAYPAL_CLIENT_ID=your_sandbox_client_id
+PAYPAL_CLIENT_SECRET=your_sandbox_client_secret
+PAYPAL_BASE_URL=https://api-m.sandbox.paypal.com
+PAYPAL_WEBHOOK_ID=optional_webhook_id
+PAYPAL_WEBHOOK_URL=https://your-public-host/api/webhooks/paypal
+```
+
+- With valid credentials, invoice creation, QR payloads, orders, subscriptions, refunds, and evidence submission use the PayPal Sandbox REST APIs.
+- With missing/incomplete credentials, the same flows return deterministic SIMULATED artifacts and the UI clearly labels them.
+- On startup, PayPulse reuses an existing Sandbox webhook or creates one automatically for `PAYPAL_WEBHOOK_URL`, then keeps the returned ID in memory. `PAYPAL_WEBHOOK_ID` still overrides that behavior when set.
+- If PayPal credentials are configured but no webhook ID can be obtained, `/api/webhooks/paypal` rejects unverified events. Signature checks are skipped only while PayPal itself is unconfigured (simulated mode).
+- `POST /api/paypal/ensure-webhook` runs the same setup on demand. It is local-only unless `PAYPULSE_API_KEY` is configured, in which case the normal API-key gate applies.
+- `MERGE_LIVE_INVOICES=true` hydrates every invoice already in the Sandbox account; `false` keeps the seeded demo book clean while live invoice writes still work.
+
+### AI brain (local Ollama, $0)
+
+PayPulse speaks the OpenAI chat-completions protocol, so it works with Ollama locally or any hosted OpenAI-compatible provider.
+
+```powershell
+ollama serve
+ollama pull qwen3.5:2b
+```
+
+```dotenv
+OPENAI_API_KEY=ollama
+LLM_BASE_URL=http://127.0.0.1:11434/v1
+LLM_MODEL=qwen3.5:2b
+LLM_PROVIDER=ollama
+LLM_TIMEOUT=60
+LLM_AUTO_MODEL=true
+LLM_REASONING_EFFORT=none
+```
+
+- `qwen3.5:2b` is the CPU-friendly default. Use `qwen3.5:4b` or `qwen3.5:latest` when you have more RAM/GPU.
+- `LLM_REASONING_EFFORT=none` disables Qwen3.5's hidden reasoning so customer copy completes quickly and is not truncated. Use `low` for more deliberation.
+- `LLM_AUTO_MODEL=true` picks the best installed local model when the configured one is missing.
+- The backend injects the live dashboard snapshot into the prompt, sanitizes small-model output, and reconciles amounts, emails, and invoice references against the user's request.
+- AI-generated collection notes are attached to PayPal invoices; AI-generated evidence briefs are submitted with disputes.
+- The UI shows `LLM tools`, `LLM offline`, or `Deterministic`. Stop Ollama to demo graceful fallback.
+
+Cloud alternative (for example Groq):
+
+```dotenv
+OPENAI_API_KEY=your_groq_key
+LLM_BASE_URL=https://api.groq.com/openai/v1
+LLM_MODEL=llama-3.3-70b-versatile
+```
+
+Leave `OPENAI_API_KEY` empty for deterministic-only intent routing. `GET /api/llm/status` reports reachability, available models, and the active model.
+
+Never commit `backend/.env`.
+
+---
+
+## Demo flow
+
+1. Open **Command center** and inspect the AG Studio canvas: KPI widgets, status mix, outstanding-by-customer, MRR by plan, invoice/subscription grids, trailing cashflow.
+2. Open **Deal desk** and run a playbook:
+   - `Invoice Acme Robotics $1,450 ...` creates an invoice + checkout order + QR.
+   - `Create a $299 monthly telemetry retainer ...` creates a subscription plan.
+   - `Nudge the top overdue invoice ...` creates a 50% split invoice with QR.
+   - `Build dispute evidence for a $480 chargeback ...` submits tracking evidence.
+3. Click **Payment QR** on an agent result or the QR icon in the ledger to open the checkout modal.
+4. Click **Nudge** on any open ledger row to target that exact invoice.
+5. Open **Webhook room** and fire:
+   - **Chargeback filed** â†’ evidence submitted.
+   - **Low-value refund** â†’ instant refund under the $25 threshold.
+   - **Capture denied** â†’ manual review above threshold.
+   - **Invoice paid** â†’ next open invoice reconciled.
+   - **Collections sweep** â†’ Pay Later split dispatch.
+6. Click **Watch 2:45 Studio Film** to run the guided product film. The film resets the seed, drives the real dashboard actions, and exits back to the dashboard.
+7. Use **Reset demo** to restore the seeded book.
+
+---
+
+## API
+
+| Method | Path | Purpose |
+| --- | --- | --- |
+| `GET` | `/api/health` | Health, mode, credential and entity counts |
+| `GET` | `/api/paypal/status` | PayPal configuration/token/webhook state |
+| `POST` | `/api/paypal/ensure-webhook` | Reuse or create the Sandbox webhook |
+| `GET` | `/api/llm/status` | LLM posture and fallback info |
+| `GET` | `/api/dashboard-data` | Customers, invoices, subscriptions, logs, summary |
+| `GET` | `/api/invoices/{invoice_id}/qr` | Invoice QR image + payer link |
+| `POST` | `/api/agent/chat` | `{ "prompt": "..." }` agent run |
+| `POST` | `/api/webhooks/paypal` | PayPal webhook receiver |
+| `POST` | `/api/demo/simulate-webhook` | `{ "scenario": "DISPUTE" }` |
+| `POST` | `/api/demo/reset` | Restore seeded state |
+
+Simulator scenarios: `DISPUTE`, `REFUND`, `DENIED`, `PAID`, `NUDGE`.
+
+---
+
+## Project layout
+
+```text
+PaypalxAI/
+â”œâ”€â”€ backend/
+â”‚   â”œâ”€â”€ main.py                 # FastAPI routes, webhook receiver, static hosting
+â”‚   â”œâ”€â”€ agent_orchestrator.py   # 3 agents, deterministic router, optional LLM tools
+â”‚   â”œâ”€â”€ paypal_client.py        # PayPal REST client + sandbox/simulated fallbacks
+â”‚   â”œâ”€â”€ state.py                # Seeded in-memory receivables book
+â”‚   â”œâ”€â”€ requirements.txt
+â”‚   â””â”€â”€ .env.example
+â”œâ”€â”€ frontend/
+â”‚   â”œâ”€â”€ src/
+â”‚   â”‚   â”œâ”€â”€ App.tsx             # Shell, navigation, orchestration, toasts
+â”‚   â”‚   â”œâ”€â”€ studioConfig.ts     # AG Studio sources, relationships, widgets, layout
+â”‚   â”‚   â”œâ”€â”€ paypalTheme.ts      # AG Studio theme
+â”‚   â”‚   â”œâ”€â”€ components/         # Agent console, QR modal, ledger, simulator, feedâ€¦
+â”‚   â”‚   â””â”€â”€ lib/                # Typed API client and formatting
+â”‚   â”œâ”€â”€ public/favicon.svg      # Flat site icon
+â”‚   â”œâ”€â”€ public/terms.html       # Terms of Service page
+â”‚   â”œâ”€â”€ public/privacy.html     # Privacy Policy page
+â”‚   â””â”€â”€ package.json
+â”œâ”€â”€ screenshots/                # 1920x1080 Devpost gallery + capture report
+â”œâ”€â”€ render.yaml                 # Single-service Render blueprint
+â”œâ”€â”€ QUICK_DEPLOY_STEPS.md
+â””â”€â”€ README.md
+```
+
+---
+
+## Design notes
+
+- Dashboard state is stored in memory and reset on backend restart; **Reset demo** restores the same seed without a restart.
+- The AG Studio model uses five sources (`summary`, `invoices`, `customers`, `subscriptions`, `cashflow`) with relationships from invoices/subscriptions to customers.
+- AG Studio expression fields calculate collection rate (`paid_amount / issued_amount`), invoice outstanding balance (`issued_amount - paid_amount`), and portfolio outstanding balance.
+- The report has three quick-switch presets: Executive cashflow, Overdue & BNPL, and Subscriptions.
+- AG Studio fields are table-qualified (`invoices.customer_id`, `summary.total_paid`, etc.).
+- AG Studio runs in `view` mode with an explicit 24-column layout and a commercial trial watermark (no license key required for the hackathon).
+- PayPal artifacts are simulated with deterministic QR content when credentials are inactive; the UI never hides which mode produced a result.
+- The dashboard uses a 70/30 Split Operations Desk, a continuous KPI ledger ribbon, real skeleton loading states, and a thin sticky footer with separate Terms of Service and Privacy Policy links.
+- Studio Film runs inside the live app, not in a video player. It drives real buttons, real invoices, real webhooks, and real agent calls, while narration, captions, and sound cues stay synchronized from the audio manifest.
+- AG Studio inherits the light institutional theme, including square widget corners and no canvas or widget shadows.
+- The frontend bundle is large because AG Studio is embedded; this is expected for a demo build.
+
+---
+
+## Verification
+
+Current local verification:
+
+- `npm run build` passes TypeScript strict checks and Vite production build.
+- Backend smoke tests pass for health, dashboard, PayPal/LLM status, invoice QR, chat intents, live-mode webhook rejection, all five simulator scenarios, reset, and 400/404/413 error paths.
+- Live Sandbox verification: PayPal OAuth token, Sandbox webhook auto-setup/reuse, invoice creation/send, checkout order with approve URL and quantity 1, and QR generation all succeeded with real Sandbox credentials.
+- `POST /api/paypal/ensure-webhook` returns `SUCCESS`; `/api/paypal/status` reports `webhook_configured: true` against `https://paypulse-ai-demo.onrender.com/api/webhooks/paypal`; an unsigned live webhook returns `400`.
+- AI verification with local `qwen3.5:2b`: tool selection for reports/invoices, AI-drafted collection notes, AI dispute evidence briefs, model status reporting, and deterministic fallback with Ollama stopped.
+- Playwright smoke tests pass 26/26 at 1440x1000 and 390x844 after the light institutional redesign: command center, all three AG Studio presets, calculated columns, deal desk, QR modal, webhook simulator, reset, and no horizontal page overflow. No unexpected console errors, page errors, failed requests, or HTTP 4xx/5xx responses.
+- AG Studio preset verification: Overdue & BNPL filters the ledger to `PP-2026-002`, `PP-2026-004`, and `PP-2026-005`; Subscriptions keeps the subscription book visible; Executive cashflow restores the full book.
+- Responsive checks pass at 320, 390, 768, 1024, 1280, and 1440 widths with zero horizontal overflow. The sticky footer is 31px tall on desktop and mobile.
+- Design regression checks pass: no violet/fuchsia UI colors, no gradients or glass effects, no soft shadows, no oversized corners, no pill-shaped buttons, no lucide icons, no page-rise animation, no em dash or emoji text, and concrete operational copy.
+- Security checks pass: Bandit 0, pip-audit 0 vulnerabilities across 24 dependencies, npm audit 0 vulnerabilities across 175 dependencies, oversized bodies return `413`, and responses include `nosniff`, `DENY`, `no-referrer`, and permissions headers.
+- Terms of Service loads at `/terms.html` and Privacy Policy loads at `/privacy.html`; both use the light institutional design and are linked from the dashboard footer. The flat `favicon.svg` is linked and served.
+- Devpost gallery is captured at 1920x1080 in `screenshots/`: Command Center, AG Studio deep dive with an active cross-filter, Deal Desk with a live $450 invoice and QR checkout, and the Studio Film isometric matrix. `screenshots/capture-report.json` records 22/22 automated layout checks with no overflow, missing images, console errors, page errors, failed requests, or HTTP errors.
+- Studio Film verification: all eight acts reached at 1920x1080, the Act 03 QR opened and the Act 04 QR closed on cue, all eight voiceover MP3s returned `200` or `206`, teleprompter and X-Ray stayed visible, the Act 07 matrix lit all eight tiles, and the finale exposed replay. The film resets the seed on open, uses the real dashboard and agent flows, and returns control to the dashboard. Run Reset demo after a session.
+- `render.yaml` is a single-service Render blueprint: it runs `npm ci` + `npm run build`, installs the backend, and starts FastAPI on `$PORT`. The checked YAML defines the target webhook URL, sandbox API base, same-origin frontend, 64 KiB body limit, and a clean seeded book.
+
+## Security
+
+- PayPal and model credentials stay server-side in `backend/.env` or hosting secrets; they are never bundled into the frontend.
+- `PAYPULSE_API_KEY` is strongly recommended. When set, direct `/api/*` calls require `X-API-Key`, except `/api/health` and the PayPal webhook. Set the matching `VITE_PAYPULSE_API_KEY` at frontend build time. This is a shared-secret gate, not user authentication.
+- Set `PAYPAL_WEBHOOK_ID` to enforce webhook signatures, or let startup reuse/create a Sandbox webhook automatically. If PayPal is configured and no ID can be obtained, webhook requests are rejected instead of accepted unverified.
+- POST mutations use an idempotent `PayPal-Request-Id` that is reused across the token-refresh retry.
+- Request bodies are limited to 64 KiB by default (`MAX_REQUEST_BYTES`), including chunked requests, and responses include basic security headers.
+- The standalone server binds to `127.0.0.1` by default. Use the hosting start command when exposing the service.
+- Do not expose this demo publicly without an authentication proxy, restricted CORS origins, and monitoring. Anyone who can call the API can run sandbox actions and consume model tokens.
+
+## Deployment
+
+`render.yaml` defines one Render web service for the demo. It builds the React frontend and serves it from FastAPI, so the dashboard and API share an origin:
+
+```bash
+cd frontend && npm ci && VITE_PAYPULSE_API_KEY="$PAYPULSE_API_KEY" npm run build && cd .. && pip install -r backend/requirements.txt
+```
+
+```bash
+cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+```
+
+The target demo URL is `https://paypulse-ai-demo.onrender.com`. Paste exactly four secrets into Render: `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_WEBHOOK_ID`, and `PAYPULSE_API_KEY`. The blueprint supplies the Sandbox API base, webhook URL, frontend origin, 64 KiB body limit, and `MERGE_LIVE_INVOICES=false` for a clean seed.
+
+See `QUICK_DEPLOY_AND_SUBMIT.md` for the final deploy, film, gallery, and Devpost checklist. See `QUICK_DEPLOY_STEPS.md` for detailed environment notes and webhook recovery. Set PayPal secrets in the hosting dashboard, never in the repo.
+
+
+

@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F6F5F2" />
+    <meta
+      name="description"
+      content="PayPulse privacy policy for the PayPal sandbox demonstration."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Privacy Policy | PayPulse</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --canvas: #f6f5f2;
+        --paper: #fcfbf9;
+        --hairline: #e2e0d8;
+        --hairline-strong: #d3d0c5;
+        --ink: #0f172a;
+        --muted: #475569;
+        --faint: #64748b;
+        --navy: #001c64;
+        --action: #0070ba;
+        font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        min-height: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--canvas);
+        color: var(--ink);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--action);
+        text-underline-offset: 3px;
+      }
+      a:hover {
+        color: var(--navy);
+      }
+      .shell {
+        width: min(920px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 0 0 56px;
+      }
+      .topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid var(--hairline);
+        padding: 18px 0;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--navy);
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--navy);
+        background: var(--navy);
+        color: var(--paper);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 10px;
+        font-weight: 600;
+      }
+      .topline span {
+        color: var(--faint);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .eyebrow {
+        margin: 40px 0 8px;
+        color: var(--action);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+      }
+      .lede {
+        max-width: 620px;
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+      .meta {
+        margin: 14px 0 0;
+        color: var(--faint);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .notice {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px;
+        margin-top: 28px;
+        border: 1px solid var(--hairline-strong);
+        background: var(--paper);
+        padding: 14px 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .notice strong {
+        color: var(--navy);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 40px;
+        margin-top: 36px;
+        border-top: 1px solid var(--hairline);
+        padding-top: 28px;
+      }
+      .contents {
+        align-self: start;
+        position: sticky;
+        top: 24px;
+      }
+      .contents p {
+        margin: 0 0 10px;
+        color: var(--faint);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .contents ol {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: section;
+      }
+      .contents li {
+        counter-increment: section;
+        border-top: 1px solid var(--hairline);
+        padding: 6px 0;
+      }
+      .contents li:last-child {
+        border-bottom: 1px solid var(--hairline);
+      }
+      .contents a {
+        display: flex;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 11px;
+        text-decoration: none;
+      }
+      .contents a::before {
+        content: counter(section, decimal-leading-zero);
+        color: var(--faint);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+      }
+      .contents a:hover {
+        color: var(--navy);
+      }
+      article section {
+        scroll-margin-top: 24px;
+        border-top: 1px solid var(--hairline);
+        padding: 22px 0;
+      }
+      article section:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      article h2 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        line-height: 1.35;
+        letter-spacing: -0.012em;
+      }
+      article p,
+      article li {
+        margin: 0 0 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      article ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+      article li::marker {
+        color: var(--action);
+      }
+      .page-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 28px;
+        border-top: 1px solid var(--hairline);
+        padding-top: 20px;
+      }
+      .page-actions a {
+        border: 1px solid var(--hairline-strong);
+        background: var(--paper);
+        padding: 8px 12px;
+        color: var(--navy);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      .page-actions a:hover {
+        border-color: var(--action);
+      }
+      .page-actions .primary {
+        border-color: var(--navy);
+        background: var(--navy);
+        color: var(--paper);
+      }
+      .page-actions .primary:hover {
+        background: var(--action);
+      }
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px;
+        border-top: 1px solid var(--hairline);
+        padding-top: 16px;
+        color: var(--faint);
+        font-family: "IBM Plex Mono", Consolas, monospace;
+        font-size: 9px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .footer span:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+      @media (max-width: 700px) {
+        .layout {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .contents {
+          position: static;
+        }
+        .contents ol {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0 16px;
+        }
+        .contents li:last-child {
+          border-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <div class="topline">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">PP</span>
+          PayPulse
+        </a>
+        <span>Legal / Privacy</span>
+      </div>
+
+      <p class="eyebrow">PayPulse legal / 02</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">
+        This policy explains what the PayPulse sandbox stores, why it stores it, and
+        which third parties process data during a demonstration.
+      </p>
+      <p class="meta">Last updated: November 11, 2026</p>
+
+      <div class="notice">
+        <strong>Sandbox only</strong>
+        <span>
+          The demo uses synthetic customer records and PayPal Sandbox credentials. Do not
+          enter real payment card data, passwords, government identifiers, or sensitive
+          personal information.
+        </span>
+      </div>
+
+      <div class="layout">
+        <nav class="contents" aria-label="Privacy contents">
+          <p>Contents</p>
+          <ol>
+            <li><a href="#data">Data collected</a></li>
+            <li><a href="#use">How data is used</a></li>
+            <li><a href="#sharing">Third parties</a></li>
+            <li><a href="#retention">Retention</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#choices">Your choices</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <article>
+          <section id="data">
+            <h2>1. Data collected</h2>
+            <p>The demo can store the following operational records:</p>
+            <ul>
+              <li>Invoice numbers, customer names, line items, amounts, and payment status.</li>
+              <li>Subscription plan names, billing dates, and account identifiers.</li>
+              <li>Dispute events, evidence status, and refund status.</li>
+              <li>Webhook event type, simulated latency, response status, and log summaries.</li>
+              <li>Agent prompts, generated recommendations, and action outcomes.</li>
+            </ul>
+          </section>
+
+          <section id="use">
+            <h2>2. How data is used</h2>
+            <p>
+              Data is used to demonstrate receivables reporting, invoice actions,
+              collection nudges, subscription views, dispute defense, webhook handling,
+              and agent-assisted operations. The demo does not sell data or use it for
+              advertising.
+            </p>
+          </section>
+
+          <section id="sharing">
+            <h2>3. Third parties</h2>
+            <p>
+              PayPal processes sandbox account, invoice, order, subscription, and dispute
+              data under its own terms. If a model provider is configured, prompts and
+              relevant operational context may be sent to that provider. No third-party
+              analytics or advertising scripts are included in the dashboard.
+            </p>
+          </section>
+
+          <section id="retention">
+            <h2>4. Retention</h2>
+            <p>
+              Demo state is held in server memory and is cleared when the server restarts
+              or when the demo reset action runs. Logs may persist for the lifetime of the
+              running process. Do not use the demo as a system of record.
+            </p>
+          </section>
+
+          <section id="security">
+            <h2>5. Security</h2>
+            <p>
+              PayPal and model credentials stay on the server in environment variables.
+              Browser responses include security headers, and direct API access can require
+              an API key. A public deployment still needs authentication, restricted
+              origins, monitoring, and a real webhook configuration.
+            </p>
+          </section>
+
+          <section id="choices">
+            <h2>6. Your choices</h2>
+            <p>
+              You can reset the demo to clear its in-memory operational state. Because this
+              is a sandbox, do not submit data you would not be comfortable losing on a
+              restart. For a self-hosted deployment, the operator controls retention and
+              access.
+            </p>
+          </section>
+
+          <section id="contact">
+            <h2>7. Contact</h2>
+            <p>
+              For privacy questions about this demo, contact the project maintainer through
+              the repository or delivery channel that provided it.
+            </p>
+          </section>
+
+          <div class="page-actions">
+            <a class="primary" href="/">Back to dashboard</a>
+            <a href="/terms.html">Terms of Service</a>
+            <a href="/privacy.html#data">Read from top</a>
+          </div>
+        </article>
+      </div>
+
+      <footer class="footer">
+        <span>PayPulse / Sandbox operations ledger</span>
+        <span>
+          <a href="/terms.html">Terms of Service</a>
+          <a href="/privacy.html">Privacy Policy</a>
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>
