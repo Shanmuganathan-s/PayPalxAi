@@ -207,6 +207,11 @@ _origins = [
     )
     if origin.strip()
 ]
+# Automatically permit Render external URL when hosted on Render
+_render_url = (os.getenv("RENDER_EXTERNAL_URL") or "").strip().rstrip("/")
+if _render_url and _render_url not in _origins:
+    _origins.append(_render_url)
+
 _allow_all = "*" in _origins
 app.add_middleware(
     CORSMiddleware,
