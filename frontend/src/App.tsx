@@ -505,17 +505,6 @@ export default function App() {
                 </span>
                 <button
                   type="button"
-                  data-film-open="studio-film"
-                  onClick={() => {
-                    resumeAudioContext();
-                    setFilmOpen(true);
-                  }}
-                  className="border border-[#001C64] bg-[#001C64] px-2.5 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.08em] text-[#FCFBF9] hover:bg-[#0070BA]"
-                >
-                  Watch 2:45 Studio Film
-                </button>
-                <button
-                  type="button"
                   onClick={() => void load(true)}
                   disabled={refreshing}
                   className="border border-[#D3D0C5] bg-[#FCFBF9] px-2.5 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-[#475569] hover:border-[#0070BA] hover:text-[#001C64] disabled:opacity-50"
