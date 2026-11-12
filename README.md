@@ -151,11 +151,11 @@ Never commit `backend/.env`.
 3. Click **Payment QR** on an agent result or the QR icon in the ledger to open the checkout modal.
 4. Click **Nudge** on any open ledger row to target that exact invoice.
 5. Open **Webhook room** and fire:
-   - **Chargeback filed** â†’ evidence submitted.
-   - **Low-value refund** â†’ instant refund under the $25 threshold.
-   - **Capture denied** â†’ manual review above threshold.
-   - **Invoice paid** â†’ next open invoice reconciled.
-   - **Collections sweep** â†’ Pay Later split dispatch.
+   - **Chargeback filed** -> evidence submitted.
+   - **Low-value refund** -> instant refund under the $25 threshold.
+   - **Capture denied** -> manual review above threshold.
+   - **Invoice paid** -> next open invoice reconciled.
+   - **Collections sweep** -> Pay Later split dispatch.
 6. Click **Watch 2:45 Studio Film** to run the guided product film. The film resets the seed, drives the real dashboard actions, and exits back to the dashboard.
 7. Use **Reset demo** to restore the seeded book.
 
@@ -184,28 +184,28 @@ Simulator scenarios: `DISPUTE`, `REFUND`, `DENIED`, `PAID`, `NUDGE`.
 
 ```text
 PaypalxAI/
-â”œâ”€â”€ backend/
-â”‚   â”œâ”€â”€ main.py                 # FastAPI routes, webhook receiver, static hosting
-â”‚   â”œâ”€â”€ agent_orchestrator.py   # 3 agents, deterministic router, optional LLM tools
-â”‚   â”œâ”€â”€ paypal_client.py        # PayPal REST client + sandbox/simulated fallbacks
-â”‚   â”œâ”€â”€ state.py                # Seeded in-memory receivables book
-â”‚   â”œâ”€â”€ requirements.txt
-â”‚   â””â”€â”€ .env.example
-â”œâ”€â”€ frontend/
-â”‚   â”œâ”€â”€ src/
-â”‚   â”‚   â”œâ”€â”€ App.tsx             # Shell, navigation, orchestration, toasts
-â”‚   â”‚   â”œâ”€â”€ studioConfig.ts     # AG Studio sources, relationships, widgets, layout
-â”‚   â”‚   â”œâ”€â”€ paypalTheme.ts      # AG Studio theme
-â”‚   â”‚   â”œâ”€â”€ components/         # Agent console, QR modal, ledger, simulator, feedâ€¦
-â”‚   â”‚   â””â”€â”€ lib/                # Typed API client and formatting
-â”‚   â”œâ”€â”€ public/favicon.svg      # Flat site icon
-â”‚   â”œâ”€â”€ public/terms.html       # Terms of Service page
-â”‚   â”œâ”€â”€ public/privacy.html     # Privacy Policy page
-â”‚   â””â”€â”€ package.json
-â”œâ”€â”€ screenshots/                # 1920x1080 Devpost gallery + capture report
-â”œâ”€â”€ render.yaml                 # Single-service Render blueprint
-â”œâ”€â”€ QUICK_DEPLOY_STEPS.md
-â””â”€â”€ README.md
+|-- backend/
+|   |-- main.py                 # FastAPI routes, webhook receiver, static hosting
+|   |-- agent_orchestrator.py   # 3 agents, deterministic router, optional LLM tools
+|   |-- paypal_client.py        # PayPal REST client + sandbox/simulated fallbacks
+|   |-- state.py                # Seeded in-memory receivables book
+|   |-- requirements.txt
+|   `-- .env.example
+|-- frontend/
+|   |-- src/
+|   |   |-- App.tsx             # Shell, navigation, orchestration, toasts
+|   |   |-- studioConfig.ts     # AG Studio sources, relationships, widgets, layout
+|   |   |-- paypalTheme.ts      # AG Studio theme
+|   |   |-- components/         # Agent console, QR modal, ledger, simulator, feed...
+|   |   `-- lib/                # Typed API client and formatting
+|   |-- public/favicon.svg      # Flat site icon
+|   |-- public/terms.html       # Terms of Service page
+|   |-- public/privacy.html     # Privacy Policy page
+|   `-- package.json
+|-- screenshots/                # 1920x1080 Devpost gallery + capture report
+|-- render.yaml                 # Single-service Render blueprint
+|-- QUICK_DEPLOY_STEPS.md
+`-- README.md
 ```
 
 ---
